@@ -1,0 +1,2101 @@
+
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <title>ПРАВИЛА СЕРВЕРА TUDOR UKRAINE RP</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('фон-сайту-новий2.0.png') no-repeat center center/cover;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.137) 0%, rgba(0, 0, 0, 0.225) 100%);
+            z-index: -1;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        body.scrolled::after {
+            opacity: 1;
+        }
+
+        .content {
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .footer {
+            width: 100%;
+            background: #ffffff00;
+            color: #fff;
+            text-shadow: 2px 2px 4px #00000066, 0 0 25px #0000006d, 0 0 5px #00000066; 
+            text-align: center;
+            padding: 10px 0;
+            box-sizing: border-box;
+            position: relative;
+            margin-top: 20px;
+        }
+
+
+
+       .top-bar .menu-button {
+    position: absolute;
+    left: 16px;  
+    top: 50%;
+    transform: translateY(-50%);
+    background: #444;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;  
+}
+
+.top-bar {
+   position: fixed; 
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   display: flex;
+   justify-content: center; 
+   padding: 10px 0;
+   background: transparent; 
+   transition: top 0.3s ease; 
+   
+}
+
+.top-bar.scrolled {
+    top: -100px;
+    transition: top 0.3s ease;
+}
+
+.header.scrolled {
+    margin-top: -100px; 
+    transition: margin-top 0.3s ease;
+}
+
+
+.logo {
+   width: 210px; 
+   height: auto;
+}
+
+.header {
+    margin-top: 90px;
+    padding-top: 20px;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    transition: margin-top 0.3s ease;
+}
+body.scrolled .header {
+    margin-top: 110px; 
+}
+
+        .social-links {
+            position: absolute;
+            left: 60px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background: #555;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .social-links a:hover {
+            background: #777;
+            transform: scale(1.1);
+        }
+
+
+
+        
+        .menu-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
+        width: 100%;
+        max-width: 1100px;
+        justify-items: center;
+    }
+
+        .menu-button:hover {
+            background: #666;
+        }
+
+ 
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -400px;    
+    width: 170px;    
+    height: 100%;   
+    background: #222;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;  
+    z-index: 999;     
+}
+
+
+.menu-button {
+    position: fixed;
+    top: 20px;       
+    left: 15px;     
+    background: #484545de;
+    color: #fff;
+    padding: 7px 9px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 1000;   
+    display: block;
+}
+
+
+.side-menu.open {
+    left: 0;  
+}
+
+.side-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    background: #444;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.side-menu a:hover {
+    background: #666;
+}
+
+        .modal .link-buttons {
+            margin-top: 15px;
+        }
+
+        .modal .link-buttons a {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 12px;
+            background: #e97d01;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .modal .link-buttons a:hover {
+            background: #ff9e3d;
+        }
+        .menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    justify-items: center;
+}
+
+.menu-item {
+    padding: 12px;
+    background: linear-gradient(to bottom, #fffffff0, #fbd7a5b2);
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease-out, opacity 0.5s ease-out;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 300px;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0; 
+    transform: translateY(-100px); 
+}
+
+.menu-item.visible {
+    opacity: 1;
+    transform: translateY(0); 
+    animation: dropEffect 1s ease-out forwards; 
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.53);
+}
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            width: 500px;
+            text-align: center;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal .penalty {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2.5em; 
+    cursor: pointer;
+    color: #555;      
+    font-weight: bold; 
+    transition: transform 0.2s;
+}
+
+.modal .close:hover {
+    color: #000;       
+    transform: scale(1.2);
+}
+
+        .info-button-container {
+    text-align: center;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+.header small {
+    font-size: 0.5em; 
+    opacity: 0.8;
+}
+
+.info-button {
+            background: #0000003f;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .info-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .menu-item .item-number {
+            font-weight: bold;
+            color: #151414;
+            font-size: 1.3em;
+        }
+
+        #fixed-update-label {
+    position: fixed;
+    bottom: 5px;
+    left: 10px;
+    font-size: 10px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.8;
+    z-index: 10000;
+    pointer-events: none;
+    background: transparent;
+}
+
+
+.header b {
+  display: inline-block;
+  position: relative;
+  color: white; 
+  background: none;
+}
+
+.header b::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background: linear-gradient(45deg, transparent 30%, #626262 50%, transparent 70%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 1.2s ease-out forwards, fadeToWhite 1.2s 1.2s forwards; 
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% 100%; 
+  }
+  100% {
+    background-position: -100% -100%; 
+  }
+}
+
+@keyframes fadeToWhite {
+  0% {
+    color: transparent; 
+  }
+  100% {
+    color: white; 
+  }
+}
+
+.header b::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background: linear-gradient(45deg, transparent 30%, #ee91d0 50%, transparent 70%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 1.2s ease-out forwards, fadeToWhite 1.2s 1.2s forwards; 
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+
+
+.org-tabs input[type="radio"] {
+  display: none;
+}
+
+.org-section {
+  margin-top: 50px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #fffffff0, #fbd7a5b2);
+  border-radius: 10px;
+  max-width: 800px;      
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.org-buttons {
+  display: flex;
+  flex-wrap: wrap;  
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 20px; 
+}
+
+.org-btn {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  white-space: nowrap;
+  flex: 0 0 auto;      
+}
+
+
+.org-btn.admin { background-color: #d62828; }
+.org-btn.pol { background-color: #38bdf8; }
+.org-btn.court { background-color: #facc15; }
+.org-btn.dbr   { background-color: #c47010; }
+.org-btn.sbs   { background-color: #2563eb; }
+.org-btn.mvs   { background-color: #7c3aed; }
+.org-btn.sec1   { background-color: #69493a; }
+.org-btn.sec2   { background-color: #69493a; }
+.org-btn.sec3   { background-color: #69493a; }
+.org-btn.sec4   { background-color: #69493a; }
+.org-btn.sec5   { background-color: #69493a; }
+.org-btn.sec6   { background-color: #69493a; }
+.org-btn.sec7   { background-color: #69493a; }
+
+.org-btn:hover {
+  filter: brightness(1.1);
+}
+
+.org-content {
+  width: 100%;
+}
+
+.org-tab-content {
+  display: none;
+  background: #f7f9ff;
+  padding: 20px;
+  border-left: 5px solid transparent;
+  border-radius: 8px;
+  max-width: 800px; 
+  margin: 0 auto;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#admin:checked ~ .org-content .admin {
+  display: block;
+  border-left-color: #d62828;
+}
+
+#pol:checked ~ .org-content .pol {
+  display: block;
+  border-left-color: #38bdf8;
+}
+
+#court:checked ~ .org-content .court {
+  display: block;
+  border-left-color: #facc15;
+}
+
+#dbr:checked ~ .org-content .dbr {
+  display: block;
+  border-left-color: #c47010;
+}
+
+#sbs:checked ~ .org-content .sbs {
+  display: block;
+  border-left-color: #2563eb;
+}
+
+#mvs:checked ~ .org-content .mvs {
+  display: block;
+  border-left-color: #7c3aed;
+}
+
+#sec1:checked ~ .org-content .sec1 {
+  display: block;
+  border-left-color: #69493a;
+}
+
+#sec2:checked ~ .org-content .sec2 {
+  display: block;
+  border-left-color: #69493a;
+}
+
+#sec3:checked ~ .org-content .sec3 {
+  display: block;
+  border-left-color: #69493a;
+}
+
+#sec4:checked ~ .org-content .sec4 {
+  display: block;
+  border-left-color: #69493a;
+}
+
+#sec5:checked ~ .org-content .sec5 {
+  display: block;
+  border-left-color: #69493a;
+}
+
+#sec6:checked ~ .org-content .sec6 {
+  display: block;
+  border-left-color: #69493a;
+}
+
+#sec7:checked ~ .org-content .sec7 {
+  display: block;
+  border-left-color: #69493a;
+}
+
+#admin:checked ~ .org-content .admin,
+#pol:checked ~ .org-content .pol,
+#court:checked ~ .org-content .court,
+#dbr:checked ~ .org-content .dbr,
+#sbs:checked ~ .org-content .sbs,
+#mvs:checked ~ .org-content .mvs, 
+#sec1:checked ~ .org-content .sec1,
+#sec2:checked ~ .org-content .sec2,
+#sec3:checked ~ .org-content .sec3,
+#sec4:checked ~ .org-content .sec4,
+#sec5:checked ~ .org-content .sec5,
+#sec6:checked ~ .org-content .sec6,
+#sec7:checked ~ .org-content .sec7
+{
+  display: block;
+}
+
+
+
+        @keyframes dropEffect {
+    0% {
+        transform: translateY(-100px); 
+    }
+    50% {
+        transform: translateY(20px); 
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+
+    @media (max-width: 768px) {
+  .top-bar {
+    margin-top: 0;  
+    padding-top: 0;  
+  }
+  .menu-button {
+        top: 10px; 
+        left: 10px;
+        padding: 6px 8px;
+        font-size: 1em;
+        z-index: 1103;
+    }
+
+    .side-menu {
+    width: 180px;
+    left: -200px; 
+    z-index: -9999; 
+    transition: left 0.3s ease-in-out;
+    overflow: hidden; 
+}
+
+.side-menu.open {
+    left: 0;
+    z-index: 1100; 
+}
+
+.side-menu.open ~ .menu-button {
+    z-index: 1102; 
+}
+  .info-button {
+    padding: 6px 10px;  
+    font-size: 1.0em;  
+  }
+
+.menu-container {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.menu-item {
+    font-size: 1em;
+    padding: 15px;
+    max-width: 250px;
+}
+
+.header {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.header small {
+    font-size: 0.35em;
+}
+
+.top-bar {
+    justify-content: center;
+    position: relative;
+    padding-top: 0;
+}
+
+.social-links {
+    position: relative;
+    left: 0;
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    font-size: 0.9em;
+    padding: 6px 10px;
+}
+
+.modal {
+    width: 80%;
+}
+.org-section {
+    padding: 15px;
+  }
+
+  .org-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .org-btn {
+    width: 90%; 
+    padding: 11px 0;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center; 
+  }
+
+  .org-btn.admin,
+  .org-btn.pol,
+  .org-btn.court,
+  .org-btn.dbr,
+  .org-btn.sbs,
+  .org-btn.mvs,
+  .org-btn.sec1,
+  .org-btn.sec2,
+  .org-btn.sec3,
+  .org-btn.sec4,
+  .org-btn.sec5,
+  .org-btn.sec6,
+  .org-btn.sec7 {
+    font-size: 14px;
+  }
+
+  .org-tab-content {
+    padding: 15px;
+    max-width: 90%; 
+  }
+
+}
+
+    </style>
+</head>
+<body>        
+    <div id="sideMenu" class="side-menu">
+        <p><h2 style="color: white; text-align: center;">МЕНЮ</h2></p>
+        <a href="https://www.roblox.com/games/start?placeId=7711635737&launchData=joinCode%3Dn7w9mies">ПОСИЛАННЯ НА СЕРВЕР</a>
+ 
+    </div>
+    <div class="top-bar">
+        <img src="logoserver.png" alt="Логотип" class="logo" />
+    </div>
+    
+
+    <div class="header">
+        <b data-text="ПРАВИЛА СЕРВЕРА">ПРАВИЛА СЕРВЕРА</b>
+            
+              <br><small>Используеться серверами Tudor Ukraine RP</small><br>
+             </div>
+
+  
+    <div class="modal" id="ruleModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="ruleText"></p>
+        <p class="penalty" id="penaltyText"></p>
+        <div class="link-buttons" id="modalLinks"></div>
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>  
+
+    <div class="info-button-container">
+        <button class="info-button" onclick="openModal(' <b>1. Какие бывают наказания: <br> </b> Администрация, суд и другие уполномоченные органы имеют право применять дисциплинарные меры к игрокам за их нарушения в рамках правил сервера. <br> <b> 1.1. Штрафы:</b><br> Если игрок нарушает правило, за которое предусмотрено наказание в виде штрафа, он обязан уплатить этот штраф. В случае неуплаты в установленный срок, он будет наказан согласно пункту 23 правил сервера. Игрок также имеет право обратиться с просьбой о предоставлении дополнительного времени для уплаты штрафа. <br> <b> 1.2. Предупреждения:</b><br> В случае незначительного нарушения правил игроку выдается предупреждение. После получения четырёх предупреждений к нему применяется наказание в виде временной депортации с сервера сроком на 7 дней. <br> <b> 1.3. Депортация (баны):</b><br> В случае серьёзного нарушения, за которое предусмотрено наказание в виде депортации (бана), оно применяется на срок, установленный соответствующим пунктом правил. При этом игрок имеет право подать апелляцию на разблокировку. <br> <b> 1.4. Общественные работы:</b><br> Если игрок нарушит правило, за которое предусмотрено наказание в виде штрафа, и не имеет средств для его уплаты, он обязан выполнять общественные работы, зарабатывая XP в выбранной профессии, назначенной администратором. Например: сумма штрафа × 0,05. Пример: 3 000 евро × 0,05 = 150 XP, которые игрок должен заработать и по окончании смены отправить скриншот администратору. <p><b>2. Компенсации</b> <br><b>2.1.</b> Суд может назначить компенсацию пострадавшему лицу на любую сумму, но в пределах принципов справедливости и человечности. </p>', '')">
+            ИНФОРМАЦИЯ
+      </button> &nbsp;
+  <button class="info-button" onclick="openModal('<h2>RP-процес</h2><p><strong>На нашем сервере все игроки обязаны соблюдать правила ролевой игры (RP).</strong><br><br>Ролевая игра — это процесс, в ходе которого каждый участник исполняет роль своего персонажа в условиях, заданных игрой или сценарием. Каждое действие должно быть логичным, соответствовать выбранной роли и реалистично вписываться в окружающий мир персонажа.<br><br><strong>КОМАНДЫ:</strong><ul><li>/me – описывает действия вашего персонажа (например, «/me иду к двери»).</li><li>/do – описывает действие в окружающей среде (например, «/do дверь открыта»).</li><li>/b – используется для внеигрового чата (например, «/b Где можно купить лицензию?»). <small>Использование OOC-чата запрещено в IC-ситуациях или для уклонения от RP-взаимодействия.</small></li></ul><br><strong>Что такое RP?</strong> <br>RP — это ситуации, в которых игроки взаимодействуют в рамках своих ролей. Например, полицейский проверяет документы у водителя, врач оказывает помощь пациенту, или водитель такси перевозит пассажира в соответствии с ПДД. RP-ситуации должны быть логичными, адекватными и взаимосвязанными между участниками игры.<ul><strong>Примеры RP:</strong><li><strong>Правильное RP:</strong> Полицейский останавливает водителя для проверки документов, спрашивает о наличии прав и техпаспорта, после чего выписывает штраф за нарушение.</li><li><strong>Правильное RP:</strong> Врач оказывает помощь пострадавшему, оценивает его состояние и принимает решение о дальнейших действиях.</li><li><strong>Правильное RP:</strong> Водитель такси сажает пассажира, уточняет маршрут и следует правилам дорожного движения.</li></ul><ul><strong>Что не является RP?</strong><li><strong>Нерелевантные или неадекватные действия:</strong> Например, когда персонаж без причины начинает стрелять в других игроков без логического объяснения или совершает насилие без обоснования.</li><li><strong>Выход за рамки роли:</strong> Если игрок, находясь в роли врача, внезапно берет на себя функции полицейского без объяснения — это нарушает RP.</li><li><strong>Нарушение контекста игры:</strong> Когда персонаж ведет себя нехарактерно для своей роли без объяснений, например, врач внезапно начинает продавать оружие в пределах медучреждения.</li></ul><strong>Пункт 35 правил сервера — Non-RP (Нон-РП):</strong> Это действия или поведение игрока, которые нарушают логику ролевой игры или не соответствуют выбранной роли. Non-RP включает поведение, выходящее из контекста, не имеющее смысла в реалистичных условиях или противоречащее внутриигровым правилам. Все такие действия могут наказываться администрацией в зависимости от степени нарушения.<br><br><strong>Термины, используемые в RP и Non-RP:</strong><ul><strong>RP термины:</strong><li><strong>IC (In Character):</strong> Всё, что происходит с точки зрения персонажа в игре.</li><li><strong>CK (Character Kill):</strong> Полная смерть персонажа, после которой он не может быть восстановлен, и его история заканчивается.</li><li><strong>Long-term RP:</strong> Долгосрочная ролевая история или отношения между персонажами.</li><li><strong>IC Actions:</strong> Действия, которые персонаж выполняет в рамках ролевой ситуации.</li><li><strong>IC Communication:</strong> Все сообщения, идущие от имени персонажа (например, в голосовой или текстовый чат, если это ролевая беседа).</li><li><strong>NLR (New Life Rule):</strong> Правило, запрещающее персонажу помнить события, произошедшие после его смерти, включая информацию о том, кто его убил.</li></ul><ul><strong>Non-RP термины:</strong><li><strong>OOC (Out Of Character):</strong> Поведение или высказывания, не относящиеся к роли персонажа (например, шутки, обсуждение реальных событий, общение вне роли).</li><li><strong>MG (MetaGaming):</strong> Использование информации, которую персонаж не мог знать в рамках RP (например, из Telegram, Discord или стрима).</li><li><strong>PG (PowerGaming):</strong> Нереалистичные действия или навязывание своих действий другим игрокам без их согласия.</li><li><strong>RDM (Random Deathmatch):</strong> Беспочвенное убийство других игроков.</li><li><strong>SK (Spawn Kill):</strong> Убийство игрока сразу после его появления в игре.</li><li><strong>FRP (Fail Role Play):</strong> Нарушение RP, которое портит игру или разрушает сюжет.</li><li><strong>Breaking RP:</strong> Внезапный выход из роли без объяснений или причин (например, начать петь песню посреди сцены).</li><li><strong>Cop Baiting:</strong> Провоцирование полиции с целью вызвать погоню или конфликт.</li><li><strong>RK (Revenge Kill):</strong> Убийство игрока в отместку за прошлую смерть без объяснения в игре.</li><li><strong>Bunnyhop (Bhop):</strong> Использование техники прыжков для ускорения передвижения, что не соответствует реалистичной игре.</li><li><strong>FZ (Fear RP):</strong> Игнорирование страха в опасной ситуации (например, не реагировать на угрозу оружием).</li><li><strong>VDM (Vehicle Deathmatch):</strong> Убийство персонажа с помощью транспорта без причин и логики.</li><li><strong>Combat Logging:</strong> Выход из игры во время боя или опасной ситуации.</li><li><strong>Trolling:</strong> Преднамеренное провоцирование игроков или админов ради эмоциональной реакции.</li><li><strong>Griefing:</strong> Намеренное вредительство или разрушение игрового процесса без RP-причин.</li><li><strong>AFK (Away From Keyboard):</strong> Игрок не участвует в игре, но оставляет персонажа активным (например, стоит без движения).</li></ul><strong>Подчёркиваем, что для качественного и приятного игрового опыта каждый игрок должен руководствоваться логикой и соблюдать свою роль, чтобы избежать нарушений и обеспечить реалистичный игровой процесс.</strong></p>', '')">
+    RP ПРОЦЕС
+</button></div>
+      
+    <div class="menu-container">
+        <div class="menu-item" onclick="openModal('Запрещено оскорблять, дискриминировать, унижать, травить или пренебрежительно высказываться о других участниках игры, включая текстовые сообщения, голосовые чаты и любые действия, которые могут нанести эмоциональный или физический вред. Также запрещается любой вид группового буллинга, когда несколько человек совместно преследуют, оскорбляют или унижают другого игрока. Отдельно запрещаются какие-либо нежелательные физические взаимодействия, такие как запрыгивание на других игроков, чрезмерно близкое приближение без согласия, навязчивые прикосновения, блокировка пути по телу и другие действия, нарушающие личное пространство. Запрещены любые формы притязаний, включая физические или словесные, а также использование непристойных или сексуальных движений и жестов.', 'Наказание - штраф до 8 000€ или временный депорт от 24 до 48 часов в зависимости от серьезности нарушения' )">
+            <div class="item-number"><small><b>1</b></small></div>
+            <b><span>Уважение, антибуллинг и личное пространство</span></b>
+        </div>
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>ПДР — Правила дорожного движения</h2>
+    
+        <h3><h3>Статья 1. Парковка в запрещённых местах</h3>
+<p>Запрещается парковать транспортные средства в местах, таких как тротуары, автобусные остановки, пешеходные переходы и места, где парковка мешает движению других игроков.</p>
+<p><strong style='color: red;'>Наказание - штраф 8 000€</strong></p>
+
+<hr>
+
+<h3>Статья 2. Разворот в запрещённых местах</h3>
+<p>Запрещается выполнять развороты в местах, где это мешает движению других игроков, таких как перекрёстки, мосты, туннели, а также в местах, где манёвры могут создать опасность для других участников дорожного движения.</p>
+<p><strong style='color: red;'>Наказание - штраф 4 500€</strong></p>
+
+<hr>
+
+<h3>Статья 3. Въезд на территорию учреждений/заводов</h3>
+<p>Любым транспортным средствам запрещается заезжать на территорию государственных или частных учреждений и заведений, включая больницы, полицейские участки, суды и другие важные объекты. Исключение составляют только транспортные средства экстренных служб при выполнении служебных обязанностей.</p>
+<p><strong style='color: red;'>Наказание - штраф 5 000€. За въезд двухколёсными транспортными средствами на территорию учреждения/завода - временная депортация на 24 часа.</strong></p>
+
+<hr>
+
+<h3>Статья 4. Поездка по встречной полосе</h3>
+<p>Запрещается движение по встречной полосе на дорогах. Это правило может быть нарушено, если дорожная разметка позволяет выполнение обгона или если объезд препятствия возможен только через встречную полосу и отсутствуют другие альтернативные пути, при этом необходимо удостовериться в безопасности манёвра.</p>
+<p><strong style='color: red;'>Наказание – штраф 5 000€</strong></p>
+
+<hr>
+
+<h3>Статья 5. Включение фар на транспортных средствах</h3>
+<p>Игроки обязаны включать фары на своих транспортных средствах с 16:00 до 06:00 (время в Emergency Hamburg), а также в любое время суток в условиях плохой видимости. За пределами населённых пунктов фары должны быть включены круглосуточно. Кроме того, фары должны быть включены всегда при движении в туннелях, на мостах или путепроводах.</p>
+<p><strong style='color: red;'>Наказание - штраф 4 000€</strong></p>
+
+<hr>
+
+<h3>Статья 6. Проезд на красный свет светофора</h3>
+<p>Запрещён проезд на красный свет светофора. Это нарушение карается автоматически, поэтому правоохранительные органы не имеют права выписывать за это наказание.</p>
+<p><strong style='color: red;'>Автоматическое наказание - штраф 100€. Администрация имеет право выписать штраф в размере 3 000€ за повторное нарушение данной статьи.</strong></p>
+
+<hr>
+
+<h3>Статья 7. Скоростной режим</h3>
+<p>В городе установлены автоматизированные радары, которые фиксируют нарушения скоростного режима и автоматически отправляют штрафы водителям, превышающим разрешённую скорость. Правоохранительные органы имеют право штрафовать за превышение скорости граждан исключительно с использованием своих радаров.</p>
+<p><strong style='color: red;'>За повторное нарушение скоростного режима администрация и суд имеют право выписать штраф в размере 5 000€.</strong></p>
+
+<hr>
+
+<h3>Статья 8. Пересечение железнодорожных переездов</h3>
+<p>При приближении к железнодорожному переезду игроки обязаны немедленно остановиться, если включается предупреждающий жёлтый сигнал или начинает опускаться шлагбаум. Объезд шлагбаума или пересечение пути до полного открытия запрещено.</p>
+<p><strong style='color: red;'>Наказание - штраф 4 200€</strong></p>
+
+<hr>
+
+<h3>Статья 9. Использование поворотников</h3>
+<p>Игроки обязаны правильно использовать поворотники при изменении направления движения, включая повороты, перестроение на другую полосу и выезд с парковок или остановок. Во время аварийных ситуаций или ДТП водители обязаны включить аварийный сигнал. Движение задним ходом также должно быть с аварийным сигналом.</p>
+<p><strong style='color: red;'>Наказание - штраф 4 200€</strong></p>
+
+<hr>
+
+<h3>Статья 10. Движение в запрещённых местах</h3>
+<p>Водителям запрещается двигаться транспортными средствами в запрещённых местах, таких как тротуары, газоны и другие территории, предназначенные для пешеходов или не предназначенные для движения вообще.</p>
+<p><strong style='color: red;'>Наказание - штраф 5 000€</strong></p>
+
+<hr>
+
+<h3>Статья 11. Движение задним ходом</h3>
+<p>Движение задним ходом запрещено на автомагистралях, в туннелях, на железнодорожных переездах, пешеходных переходах, мостах, путепроводах и других местах с ограниченной видимостью, где создаётся опасность для участников дорожного движения.</p>
+<p><strong style='color: red;'>Наказание - штраф 5 000€</strong></p>
+
+<hr>
+
+<h3>Статья 12. Пешеходные переходы</h3>
+<p>Водители должны снижать скорость и быть особенно внимательными при приближении к пешеходным переходам, обеспечивая безопасный проход пешеходов. Водитель обязан пропустить пешехода, как только тот встанет на пешеходный переход или находится перед ним, даже если светофор разрешает движение.</p>
+<p><strong style='color: red;'>Наказание - штраф 5 800€</strong></p>
+
+<hr>
+
+<h3>Статья 13. Круговое движение</h3>
+<p>Водители обязаны соблюдать очередность проезда на круговом движении, пропуская транспортные средства, которые первыми заехали на круг. Повороты необходимо выполнять только с соответствующих полос движения, а сигналы поворота подавать заранее для предупреждения других участников дорожного движения.</p>
+<p><strong style='color: red;'>Наказание - штраф 3 000€</strong></p>
+
+<hr>
+
+<h3>Статья 14. Обгон</h3>
+<p>Запрещено выполнять обгон на пешеходных переходах, перекрёстках, железнодорожных переездах, дорогах с ограниченной видимостью и на сплошной линии разметки. Обгон нескольких транспортных средств запрещён на всех участках дорог, независимо от обстоятельств. Это правило распространяется на все типы дорог и манёвр не разрешён, даже если ситуация кажется безопасной, поскольку обгон нескольких машин одновременно всегда создаёт дополнительные риски для участников дорожного движения.</p>
+<p><strong style='color: red;'>Наказание - штраф 5 800€</strong></p>
+
+<hr>
+
+<h3>Статья 15. Звуковые сигналы</h3>
+<p>Запрещено безосновательное использование звуковых сигналов (гудков) в жилых зонах или рядом с важными учреждениями. Сигнал может быть использован только для предупреждения о опасности или при избежании аварийной ситуации.</p>
+<p><strong style='color: red;'>Наказание - штраф 4 000€</strong></p>
+
+<hr>
+
+<h3>Статья 16. ДТП</h3>
+<p>В случае дорожно-транспортного происшествия (ДТП) все участники обязаны немедленно остановиться, обеспечить безопасность на месте происшествия, вызвать полицию для фиксации факта аварии и последующего рассмотрения. Если транспортное средство получило повреждения, виновник обязуется компенсировать ущерб пострадавшему, включая расходы на ремонт автомобиля и возможные медицинские расходы в случае травмирования водителя или пассажиров. В случае отсутствия договорённости по размеру компенсации, дело должно быть передано в суд для разрешения.</p>
+<p><strong style='color: red;'>Наказание за побег с места происшествия - временная депортация на 2 дня</strong></p>
+
+<hr>
+
+<h3>Статья 17. Приоритет для экстренных служб</h3>
+<p>Все игроки обязаны обеспечивать беспрепятственный проезд транспортным средствам экстренных служб, таким как скорая помощь, полиция, пожарная служба и другие службы, выполняющие неотложные служебные задачи. Намеренное блокирование, задержка или создание препятствий для движения экстренных служб категорически запрещены.</p>
+<p><strong style='color: red;'>Наказание - штраф 7 600€ или временная депортация до 3 дней</strong></p>
+
+<hr>
+
+<h3>Статья 18. Выезд общественного транспорта с остановки в населённых пунктах</h3>
+<p>Водители общественного транспорта при выезде с остановки в населённом пункте имеют приоритет и не обязаны пропускать другие транспортные средства. Однако они должны соблюдать осторожность и удостовериться в безопасности выезда, особенно учитывая возможных пешеходов.</p>
+<p><strong style='color: red;'>Наказание за непредоставление приоритета - штраф 6 700€ или временная депортация до 3 дней</strong></p>
+
+<hr>
+
+<h3>Статья 19. Поворот с неправильной полосы</h3>
+<p>Запрещается выполнять поворот с полосы, не предназначенной для этого манёвра. Водитель обязан правильно выбрать полосу для поворота заранее, не меняя полосу в последний момент.</p>
+<p><strong style='color: red;'>Наказание - штраф 5 800€</strong></p>
+
+<hr>
+
+<h3>Статья 20. Переход на полосу, не соответствующую направлению поворота</h3>
+<p>Запрещается после выполнения поворота переходить на полосу, не соответствующую направлению поворота. Водитель, выполнивший поворот, должен остаться на той полосе, которая соответствует направлению его движения.</p>
+<p><strong style='color: red;'>Наказание - штраф 4 500€</strong></p>
+
+<hr>
+
+<h3>Статья 21. Пропускание транспортных средств на встречной полосе</h3>
+<p>Если водитель выезжает на встречную полосу для объезда препятствия (например, ДТП или других чрезвычайных ситуаций), водители на встречной полосе обязаны пропустить транспортное средство, выезжающее, при условии, что оно уже начало манёвр.</p>
+<p><strong style='color: red;'>Наказание - штраф 4 500€</strong></p>
+
+<hr>
+
+<h3>Статья 22. Остановка транспортных средств правоохранителями в туннелях и на мостах</h3>
+<p>Остановка транспортных средств правоохранительными органами на мостах, эстакадах, путепроводах и в туннелях запрещена, кроме случаев крайней необходимости или вынужденной остановки из-за технической неисправности. Правоохранитель, останавливая транспортное средство на мостах, эстакадах, путепроводах или в туннелях, обязан дать команду водителю остановиться после завершения моста или туннеля, в ближайшем безопасном месте, чтобы избежать аварийных ситуаций и не создавать препятствий для других участников движения.</p>
+<p><strong style='color: red;'>Наказание - штраф 7 500€</strong></p>
+
+<hr>
+
+<h3>Статья 23. Аварийные ситуации</h3>
+<p>В случае остановки транспортного средства в запрещённых для этого местах водитель обязан оправдать такую остановку. Кроме того, он должен немедленно включить аварийную сигнализацию, чтобы предупредить других участников дорожного движения о наличии опасности.</p>
+<p><strong style='color: red;'>Наказание за остановку без уважительной причины - штраф 6 000€<br>Наказание за остановку без аварийной сигнализации - штраф 6 000€</strong></p>
+
+<hr>
+
+<h3>Статья 24. Запрещённые дрифты на дорогах</h3>
+<p>Запрещается выполнение дрифта на общих дорогах, кроме специально отведённых для этого площадок. Дрифтование на дорогах общего пользования создаёт опасность для других участников движения и нарушает принципы безопасности, что может привести к аварийным ситуациям.</p>
+<p><strong style='color: red;'>Наказание - штраф 8 000€</strong></p>
+
+<hr>
+
+<h3>Статья 25. Пешеходы в запрещённых местах</h3>
+<p>Запрещается переходить дорогу в местах, где это прямо запрещено правилами дорожного движения, таких как магистрали, перекрёстки без пешеходных переходов или в зонах с высокой интенсивностью движения. Пешеходы должны использовать только обозначенные пешеходные переходы или переходить дорогу в другом месте только в случае крайней необходимости, если это невозможно сделать безопасно в пределах разрешённых зон.</p>
+<p><strong style='color: red;'>Наказание - штраф 5 000€</strong></p>
+
+<hr>
+
+<h3>Статья 26. Побег от полиции после правонарушения</h3>
+<p>Запрещается побег от полиции после совершения правонарушения. В случае, если полиция требует остановиться, водитель обязан выполнить требование и не пытаться избежать ответственности путём побега.</p>
+<p><strong style='color: red;'>Наказание - штраф 7 000€</strong></p>
+
+<hr>
+
+<h3>Статья 27. Посадка и высадка пассажиров</h3>
+<p>Все игроки, включая сотрудников служб (правоохранительные органы, медики, такси и т.д.), обязаны осуществлять посадку и высадку пассажиров исключительно в разрешённых местах, не создавая препятствий для движения других транспортных средств.</p>
+<p><strong style='color: red;'>Наказание - штраф 3 500€</strong></p>
+
+<hr>
+
+<h3>Статья 28. Использование транспортных средств без регистрации</h3>
+<p>Запрещено использовать транспортные средства без обязательной регистрации, а также эксплуатация автомобилей, не соответствующих стандартам безопасности или техническому состоянию, прописанным в правилах.</p>
+<p><strong style='color: red;'>Наказание - штраф 10 000€</strong></p>
+</strong></p>
+
+
+      `)">
+        <div class="item-number"><small><b>2</b></small></div>
+        <b><span>ПДР</span></b>
+      </div>
+        
+      <div class="menu-item" onclick="openModal('Использование сторонних программ, читов или других технических средств для получения преимущества над другими игроками, включая возможности полетов, бессмертия или другие незаконные модификации игрового процесса, строго запрещено. Также запрещено умышленное использование багов или ошибок игры для получения преимущества.', 'Наказание – бессрочная депортация')">
+            <div class="item-number"><small><b> 3</b></small></div>
+            <b><span>Использование читов и багов</span></b>
+        </div>
+
+             
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Службові обов’язки</h2>
+
+        <h3>Статья 1. Исполнение служебных обязанностей</h3>
+<p>Каждый сотрудник обязан выполнять свои должностные обязанности ответственно и без нарушений. Служебные автомобили и спецтехника могут использоваться исключительно для выполнения служебных задач. Игнорирование или ненадлежащее исполнение обязанностей во время службы недопустимо.</p>
+<p><strong style='color: red;'>Наказание - штраф 8 000€ или временный депорт до 3 суток<br> Также возможно принудительное увольнение</strong></p>
+<hr>
+<h3>Статья 2. Злоупотребление служебными обязанностями</h3>
+<p>Медики и другие сотрудники служб на сервере не имеют права находиться с избранными лицами, получать какие-либо преимущества или действовать в интересах определенных игроков, нарушая принципы беспристрастности и профессионализма. Они обязаны выполнять свои обязанности без какой-либо привилегии или личной выгоды.</p>
+<p><strong style='color: red;'>Наказание – временный депорт до 5 суток</strong></p>
+<hr>
+<h3>Статья 3. Неправомерное использование сирен и мигалок</h3>
+<p>Использование сирен, мигалок и других сигнальных устройств разрешается исключительно при исполнении служебных обязанностей или в чрезвычайных ситуациях. Запрещается применять такие устройства в личных целях, в частности, чтобы избежать штрафов, ответственности или других санкций.</p>
+<p><strong style='color: red;'>Наказание – штраф 6 000€</strong></p>
+
+        `)">
+        <div class="item-number"><small><b>4</b></small></div>
+        <b><span>Служебные обязанности</span></b>
+      </div>
+
+        <div class="menu-item" onclick="openModal('Проведение рейдов, направленных на создание хаоса, нарушение РП-процесса или с целью навредить другим игрокам без обоснованной РП-причины - строго запрещено.', 'Наказание - временный или постоянный депорт по усмотрению администрации<br> Если аккаунт новый - бессрочный депорт.')">
+            <div class="item-number"><small><b> 5</b></small></div>
+            <b><span>Рейди</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Все участники сервера обязаны подчиняться приказам и указаниям всех уполномоченных служб, действующих в рамках игрового процесса. Это включает, но не ограничивается, правоохранительными органами, судебными органами, администрацией, экстренными службами (медики, пожарные, спасатели), специальными подразделениями и другими структурами, исполняющими служебные обязанности. Сотрудничество для поддержания порядка на сервере обязательно. Отказ от сотрудничества возможен только в случае, если указание нецелесообразно или противоречит общепринятым нормам поведения.', 'Наказание – депорт на 2 суток')">
+            <div class="item-number"><small><b> 6</b></small></div>
+            <b><span>Сотрудничество со всеми службами и уполномоченными лицами</span></b>
+        </div>        
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Атака</h2>
+
+        <h3>Статья 1. RDM (Random Death Match)</h3>
+<p>Запрещается убивать других игроков без конкретной причины или предварительного взаимодействия с ними в контексте игры. Убийства, совершаемые без предварительного конфликта или без наличия роли, обосновывающей такое поведение, считаются RDM.</p>
+<p><strong style='color: red;'>Наказание – временный депорт на 5 суток<br> Также возможно принудительное увольнение</strong></p>
+
+<hr>
+
+<h3>Статья 2. Препятствование служебной деятельности</h3>
+<p>Запрещается препятствовать исполнению служебных обязанностей другими игроками, в том числе представителями администрации, медицинской службы, спасателей, полиции, транспортных работников и других государственных или специальных служб.</p>
+<p><strong style='color: red;'>Наказание – временный депорт на 3 суток</strong></p>
+
+
+        `)">
+        <div class="item-number"><small><b>7</b></small></div>
+        <b><span>Атака</span></b>
+      </div>
+
+        <div class="menu-item" onclick="openModal('Запрещается разговоры про политику на сервере', 'Наказание - бессрочный депорт')">
+            <div class="item-number"><small><b> 8</b></small></div>
+            <b><span>Без политики</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Временное присвоение территории</h2>
+<p>На сервере действует система временного присвоения, позволяющая игрокам занимать свободные здания для личного пользования на время.</p>
+<br> <b>Условия и правила присвоения:</b>
+<li> <b>Бесплатные занятия</b> — каждый игрок может бесплатно занять одно свободное здание, если оно не занято другими лицами.
+<li> <b>Обязательное обозначение</b> — территория считается присвоенной только при наличии четких меток, таких как дорожные конусы или ленты (пример на фото ниже). Без этих признаков здание считается общедоступным.
+<li> <b>Одно здание на игрока</b> — каждый игрок может иметь только одно здание одновременно.
+<li> <b>Защита территории</b> — другие игроки не имеют права использовать или занимать присвоенную территорию без разрешения владельца при условии, что она правильно обозначена.
+<li> <b>Некоторые территории на сервере</b> лицензированы, то есть находятся в официальной аренде у конкретных игроков. Перед временным присвоением обязательно убедись, что территория не находится в аренде у другого игрока. Проверка доступна на нашем сайте по кнопке ниже. 
+<br><br><a href='https://telegra.ph/L%D1%96cenzovan%D1%96-gravc%D1%96-na-teritor%D1%96yu-na-server%D1%96-UKRAINE-RP-v-EH-01-05' target='-blank' background-color: #ff9e3d; color: white; padding: 10px 15px; text-decoration: нет; border-radius: 5px;'>ПЕРЕЙТЫ</a> 
+<h3>Статья 1. Присвоение присвоенной/лицензированной территории</h3>
+<p>Запрещено присваивать территорию, которая лицензирована или временно присвоена другим игроком. </p>
+<p><strong style='color: red;'>Наказание – штраф 7 000€ или временный депорт до 2 суток</strong></p>
+
+<hr>
+
+<h3>Статья 2. Проникновение на присвоенную/лицензированную территорию</h3>
+<p>Запрещено без разрешения владельца заходить или въезжать на присвоенную или лицензированную территорию другого игрока. Это включает проникновение пешком, транспортными средствами или другим способом.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт на 2 суток</strong></p>
+
+<hr>
+
+<h3>Статья 3. Доступ экстренных служб</h3>
+<p>Экстренные службы имеют право заходить или въезжать на присвоенную или лицензированную территорию только по предварительному согласию владельца или в случаях чрезвычайной ситуации (пожар, угроза жизни и т.п.).</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€</strong></p>
+<hr>
+<img src='https://i.postimg.cc/QtLZb3Nq/v7-3-1.png' alt='Пример правильного обозначения территории' style='margin-top: 10px; border-radius: 10px; max-width: 100%; height: auto;'>
+<small>Пример правильного обозначения территории</small>
+
+`)"> 
+<div class="item-number"><small><b>9</b></small></div> 
+<b><span>Временное присвоение территории</span></b> 
+</div> 
+
+<div class="menu-item" onclick="openModal('Запрещено подавать ложные жалобы с целью введения в заблуждение органов или для достижения личной выгоды. Все жалобы должны быть подкреплены конкретными фактами и доказательствами, подтверждающими наличие нарушения. Представление ложных жалоб будет считаться серьезным нарушением и может привести к соответствующим нарушениям и может привести к соответствующим нарушениям и может привести к соответствующим нарушениям. 'Наказание - решение уполномоченного органа')">
+            <div class="item-number"><small><b>10</b></small></div>
+            <b><span>Представление ложных жалоб</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Уполномоченные органы, включая экстренные службы, обязаны владеть полным знанием правил сервера для надлежащего выполнения своих служебных обязанностей. Для обычных игроков знание всех правил не обязательно, однако это не будет освобождать их от ответственности за нарушение. Незнание установленных норм не будет считаться оправданием, и в случае нарушения соответствующие санкции будут применены независимо от уровня осведомленности игрока')">
+            <div class="item-number"><small><b>11</b></small></div>
+            <b><span>Незнание правил сервера</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Игрокам запрещено совершать безосновательные или ложные вызовы любых экстренных служб. Если фальшивый вызов обоснован уважительной причиной, наказание не будет применено.', 'Наказание - штраф 4 500€ или временный депорт до 2 суток')">
+            <div class="item-number"><small><b>12</b></small></div>
+            <b><span>Фальшивые вызовы служб</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Журналістська діяльність</h2>
+
+      <h3>Статья 1. Регистрация СМИ</h3>
+<p>Все СМИ на сервере должны быть официально зарегистрированы. Какая-либо журналистская деятельность без предварительной регистрации СМИ запрещена. Для регистрации перейдите по кнопке ниже.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€</strong></p>
+
+<a href='https://t.me/PressURBot?start=start' target='_blank' style='display: inline-block; background-color: #ff9e3d; color: white; padding: 10px 15px; text-decoration: нет; border-radius: 5px;'>ЗАРЕГИСТРИРОВАТЬ</a> 
+
+<hr>
+
+<h3>Статья 2. Журналистская лицензия (пресс-карта)</h3>
+<p>Журналистская лицензия (пресс-карта) обязательна для ведения журналистской деятельности. Работать журналистом без пресс-карты запрещено. Для получения перейдите по кнопке ниже.</p>
+<p><strong style='color: red;'>Наказание – временный депорт до 3 суток</strong></p>
+<a href='https://t.me/PresslicenseURBot?start=start' target='_blank' style='display: inline-block; background-color: #ff9e3d; color: white; padding: 10px 15px; text-decoration: нет; border-radius: 5px;'>ПОЛУЧИТЬ</a>
+<hr>
+
+<h3>Статья 3. Распространение дезинформации представителями СМИ</h3>
+<p>Любое сознательное распространение ложной информации, вводящей в заблуждение игроков или дискредитирующих лиц, организации или события на сервере, считается нарушением.</p>
+<p><strong style='color: red;'>Наказание – временный депорт до 5 суток и отмена регистрации СМИ вместе с пресс-картами</strong></p>
+
+<hr>
+<h3>Статья 4. Поведение журналистов</h3>
+<p>Журналисты на сервере обязаны соблюдать профессиональную этику, объективность и честность в своей деятельности. Журналист обязан по требованию любого лица предоставить номер своей пресс-карты для подтверждения легитимности своей деятельности.</p>
+<p><strong style='color: red;'>Наказание - штраф в размере 6 000€ и возможна отмена пресс-карты</strong></p>
+
+<hr>
+
+<h3>Статья 5. Препятствование журналистской деятельности</h3>
+<p>Любые действия, направленные на препятствование журналистской деятельности, недопустимы. Это включает физическое или психологическое давление, угрозы, применение силы, а также сознательное ограничение доступа к информации или местам проведения событий. Представители СМИ имеют право на свободный и беспрепятственный доступ к публичным мероприятиям, собраниям, пресс-конференциям и другим событиям для выполнения своих профессиональных обязанностей. Они также имеют право посещать соответствующие локации для сбора информации, проверки фактов и освещения событий.</p>
+<p><strong style='color: red;'>Наказание – временный депорт до 5 суток</strong></p>
+
+`)">
+        <div class="item-number"><small><b>13</b></small></div>
+        <b><span>Журналистская деятельность</span></b>
+      </div>    
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Правоохоронні органи</h2>
+        <h3>Статья 1. Безосновательные штрафы</h3>
+<p>Полицейским запрещается выписывать штрафы без четкого обоснования и доказательств нарушения правил. Каждый штраф должен быть аргументирован и соответствовать фактической ситуации.</p>
+<p><strong style='color: red;'>Наказание – штраф 6 000€</strong></p>
+<hr>
+
+<h3>Статья 2. Безосновательный арест/заключение правоохранителями</h3>
+<p>Правоохранительные органы имеют право задерживать граждан только при наличии обоснованных оснований. После ареста задержанное лицо должно быть доставлено в суд для надлежащего рассмотрения дела. Если суд недоступен в момент задержания, правоохранитель обязан сообщить судье об инциденте и ждать до 5-10 минут для организации судебного разбирательства. В случаях, когда правонарушение предусматривает только штраф, задержание должно быть ограничено, и виновник должен получить соответствующие санкции без применения заключения.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт до 5 суток</strong></p>
+<hr>
+
+<h3>Статья 3. Ограничение полномочий по наложению штрафов</h3>
+<p>Полицейские, не достигшие уровня опыта в 10,000 XP, не имеют права осуществлять административное взыскание в виде штрафов. В случае выявления нарушений со стороны других игроков, такие полицейские обязаны составить рапорт и передать информацию о нарушителе администрации для дальнейшего рассмотрения и принятия соответствующих мер.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт до 6 суток</strong></p>
+<hr>
+
+<h3>Статья 4. Использование шипов</h3>
+<p>Правоохранительным органам запрещено устанавливать шипы для остановки автомобиля без предварительной проверки его государственного номера. Перед применением шипов необходимо убедиться, находится ли транспортное средство в розыске, имеет ли водитель лицензию на оружие или есть ли основания полагать, что водитель нарушает правила сервера. Если автомобиль не находится в розыске и нет законных оснований для остановки, использование шипов незаконно.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт до 3 суток. Компенсация лицу, не находящемуся в розыске и наехавшему на шипы, установленные правоохранительным органом, осуществляется этим органом в размере до 7 000€</strong></p>
+<hr>
+
+<h3>Статья 5. Штрафы за превышение скорости</h3>
+<p>Правоохранительные органы имеют право штрафовать за превышение скорости граждан исключительно своим радаром.</p>
+<p><strong style='color: red;'>Наказание – штраф 7 000€</strong></p>
+<hr>
+
+<h3>Статья 6. Арест и заключение игроков с лицензией на оружие</h3>
+<p>Правоохранительные органы не имеют права арестовывать игроков, владеющих лицензией на оружие. Они могут задержать такого игрока для проверки или действительную лицензию. Арест допускается только при использовании оружия для совершения преступлений (например, ограбление, нападение, хулиганство) или нарушение правил сервера.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт до 5 суток</strong></p>
+<hr>
+
+<h3>Статья 7. Безосновательное использование оружия или тазера</h3>
+<p>Правоохранителям запрещается использовать оружие или тазер без подлежащего тому основанию. Использование оружия должно быть обоснованным и производиться только в случае угрозы жизни или непосредственной опасности для общественного порядка.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или депорт по решению администрации или суда</strong></p>
+<hr>
+
+<h3>Статья 8. Неправомерные действия правоохранителей</h3>
+<p>Запрещаются какие-либо неправомерные действия со стороны правоохранительных органов, включая, но не ограничиваясь: злоупотребление служебным положением, превышение полномочий, безосновательное задержание, унижение достоинства, пытки, угрозы, вымогательства, фальсификация доказательств, заговор, скрытие правонарушений провокации на преступления, получение взяток, служебная халатность или другие действия, нарушающие права и свободы граждан или противоречащие законодательству.</p>
+<p><strong style='color: red;'>Наказание – штраф от 8 000€ или депорт по решению администрации или суда (возможно увольнение)</strong></p>
+<hr>
+
+        `)">
+        <div class="item-number"><small><b>14</b></small></div>
+        <b><span>Правоохранительные органы</span></b>
+      </div>
+
+
+    <div class="menu-item" onclick="openModal('Запрещается выходить с сервера во время активной RP-сцены без веской причины. Выход во время важной ситуации, таких как задержание, преследование или конфликт, считается нарушением. В случае необходимости прекратить игру из-за технических проблем или других объективных причин, игрок обязан уведомить администрацию.', 'Наказание - депорт на 5 суток')">
+        <div class="item-number"><small><b>15</b></small></div>
+        <b><span>Выход с сервера во время RP-сцены</b></span>
+    </div>
+
+    <div class="menu-item" onclick="openModal(`
+        <h2>Співучасть у злочинах</h2>
+
+        <h3>Статья 1. Соучастие между обычными игроками</h3>
+<p>Игрокам запрещено участвовать в преступных действиях или помогать другим игрокам в нарушении правил. Это включает участие в нападениях, бомбардировках, побегах после преступлений и других формах соучастия в преступлениях.</p>
+<p><strong style='color: red;'>Наказание – штраф 4 000€</strong></p>
+<hr>
+
+<h3>Статья 2. Соучастие между государственными органами и другими службами</h3>
+<p>Сотрудники государственных и экстренных служб также не могут участвовать в преступных действиях или помогать другим игрокам совершать преступления. Если, например, сотрудник полиции или медицинских служб принимает участие в содействии преступления или бегства после совершения правонарушения, это считается серьезным нарушением.</p>
+<p><strong style='color: red;'>Наказание – временный депорт в сутки</strong></p>
+
+        `)">
+        <div class="item-number"><small><b>16</b></small></div>
+        <b><span>Соучастие в преступлениях</span></b>
+      </div>
+
+        <div class="menu-item" onclick="openModal('Запрещается совершать умышленные наезды на других игроков или использовать транспортные средства как оружие для нанесения ущерба другим без предварительного конфликта или соответствующей ситуации, оправдывающей такое поведение в рамках роли.', 'Наказание – временный депорт до 5 суток в зависимости от серьезности нарушения')">
+            <div class="item-number"><small><b>17</b></small></div>
+            <b><span>VDM (Vehicle Deathmatching)</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Запрещено мстить за смерть своего персонажа путем повторного убийства убившего его лица без логической RP-причины, поскольку после смерти персонаж теряет память об обстоятельствах гибели.', 'Наказание - временный депорт на 3 суток')">
+            <div class="item-number"><small><b>18</b></small></div>
+            <b><span>RK (RevengeKill)</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('На сервере запрещается использовать скины, содержащие оскорбительные изображения или пропаганду, а также вписывать в имя собственное оскорбительные слова или пропаганду любого вида. Использование скинов, имитирующих форму или одежду работников специальных служб или государственных органов, таких как спецназ, ДБР, СБУ/СБС, полиция и т.п., а также футболок или другой одежды с надписями, эмблемами или символикой этих органов, также запрещено. Украинская символика не считается пропагандой и разрешена на сервере при условии, что ее использование не имеет оскорбительного или агрессивного контекста', 'Наказание - временный или постоянный бан по решению администрации или суда')">
+            <div class="item-number"><small><b>19</b></small></div>
+            <b><span>Внешний вид</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Все <b>бытовые игроки</b> обязаны платить налог на username <b>666_Vegas</b> в размере 6 900€ в первую и последнюю субботу полноценной недели месяца. Администрация, суд и другие государственные органы также обязаны платить налог, но в размере 50% от указанной суммы (3450 €). Средства по налогам направляются на выплату зарплат администрации, мэрии, государственным органам и на организацию различных мероприятий и финансирование проектов развития сервера. <b>Промышленные игроки</b> (собственники бизнесов) также обязаны платить налог на username <b>666_Vegas</b> в размере 8 000€ дважды в месяц – 1-го и 15-го числа. Собранные средства направляются на финансирование общественных мероприятий, выплату зарплат администрации и государственным органам', 'Наказание - запрещение участия в ивентах, запрещение трудоустройства в гос-органах и временный депорт на 14 суток или штраф в размере 16 000 €')">
+            <div class="item-number"><small><b>20</b></small></div>
+            <b><span>Податок на сервер</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Суд</h2>
+
+        <h3>Статья 1. Судебный процесс</h3>
+<p>Игроки не имеют права вмешиваться или прерывать судебный процесс каким-либо образом. При рассмотрении дела все стороны должны воздерживаться от возгласов, комментариев, жестов или других действий, которые могут повлиять на ход заседания.</p>
+<p><strong style='color: red;'>Наказание – временный депорт до 3 суток</strong></p>
+<hr>
+
+
+
+        `)">
+        <div class="item-number"><small><b>21</b></small></div>
+        <b><span>Суд</span></b>
+      </div>
+
+
+        <div class="menu-item" onclick="openModal('Запрещается избегать наказания за нарушение правил сервера, в частности: неуплата штрафов, невыполнение общественных работ, обход бана, например создание или использование звонков (других аккаунтов). ', 'Наказание – временный депорт до 7 суток. За обход бана – депорт навсегда')">
+            <div class="item-number"><small><b>22</b></small></div>
+            <b><span>Избегание наказания</span></b>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Запрещается умышленное препятствие организации или проведению официальных ивентов и мероприятий на сервере. Это включает, но не ограничивается: вмешательство в ход инвента, саботаж, использование багов или эксплойтов для нарушения нормального проведения события, создание хаоса с целью прерывания мероприятия или попытки мешать другим участникам.', 'Наказание - временный депорт до 5 суток')">
+            <div class="item-number"><small><b>23</b></small></div>
+            <b><span>Препятствование организации ивентов</span></b>
+        </div>
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Майно</h2>
+
+        <h3>Статья 1. Умышленное повреждение чужого имущества</h3>
+<p>Игрокам запрещается намеренно повреждать или уничтожать имущество других игроков, включая транспортные средства, дома или другие объекты собственности. Все действия, повлекшие потерю или вред другим игрокам, должны быть компенсированы, а нарушители подлежат наказанию.</p>
+<p><strong style='color: red;'>Наказание – временный депорт до 3 суток</strong></p>
+<hr>
+
+<h3>Статья 2. Проникновение в/на чужое авто и имущество</h3>
+<p>Запрещено подниматься на чужие транспортные средства и другое частное имущество, а также проникать в чужие транспортные средства без разрешения владельца.</p>
+<p><strong style='color: red;'>Наказание – штраф 7 000€ или временный депорт в сутки</strong></p>
+<hr>
+
+<h3>Статья 3. Повреждение имущества и объектов инфраструктуры</h3>
+<p>Запрещено умышленно повреждать или уничтожать любое имущество, принадлежащее общине, включая, но не ограничиваясь, стеклом, дорожными знаками, столбами, заборами, объектами инфраструктуры, а также имуществом в публичных местах, учреждениях или заведениях. Также запрещено без разрешения администрации прикреплять к такому имуществу какие-либо предметы, в том числе ленты, конусы, наклейки или другие посторонние объекты.</p>
+<p><strong style='color: red;'>Наказание за повреждение или уничтожение имущества - временная депортация до 3 суток.<br> Наказание за незаконную установку предметов - штраф 7 000€</strong></p>
+        `)">
+        <div class="item-number"><small><b>24</b></small></div>
+        <b><span>Имущество</span></b>
+      </div>
+
+        <div class="menu-item" onclick="openModal('Коррупционные действия, включая получение и предложение взяток, злоупотребление служебным положением или содействие незаконным действиям других игроков в обмен на личную выгоду, строго запрещены.', 'Наказание - штраф от 8 000 € до 16 000 €')">
+            <div class="item-number"><small><b>25</b></small></div>
+            <b><span>Коррупция</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('<p>Правоохранительные органы не имеют права запрещать такие меры, если они не нарушают действующие правила сервера. Полицейские и другие службы должны обеспечивать безопасность и охрану порядка во время мирных митингов или протестов, помогать в координации движения всем игрокам. В случае нарушений или агрессивных действий во время митинга, правоохранители имеют право вмешиваться только с целью восстановления порядка и защиты граждан.</p><p> Участники таких мер обязаны обеспечивать беспрепятственный проезд для экстренных служб (таких, как полиция, скорая помощь, пожарная служба, администрация и другие), чтобы не препятствовать. Каждый участник мероприятия должен быть без активного сыска. Участие в митинге с розыском запрещено.</p>', '<p>Наказание для правоохранительных органов за перехождение участникам мирного митинга или протеста - штраф 8 000€ или временный депорт до 5 суток</p><p>Наказание для участников митинга за несоблюдение требований - временный</p>')">
+            <div class="item-number"><small><b>26</b></small></div>
+            <b><span>Проведение мирных митингов/протестов</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Запрещается применение взрывных устройств, в том числе взрыв бомб, в общественных местах, на территории государственных или частных учреждений, заведений и других публичных локаций. Такие действия несут серьезную угрозу безопасности, здоровью и имуществу граждан, а также нарушают общий порядок. Однако на территории зеленых зон нарушение этого пункта будет наказываться в соответствии с наказанием, определенным в пункте 33.', 'Наказание - штраф 6 000€ или временный депорт до 2 суток')">
+            <div class="item-number"><small><b>27</b></small></div>
+            <b><span>Взрывные устройства в публичных местах</b></span>
+        </div>
+
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Ответственность за потерю или отсутствие индикатора розыска</h2> 
+
+<h3>Статья 1. Утрата идентификатора розыска во время преследования</h3>
+<p>Если игрок, находясь в розыске, во время полицейского преследования или задержания теряет идентификатор розыска (звездочки), это не освобождает его от ответственности за предыдущие правонарушения. Идентификатор не снимает обязанности понести наказание, и правоохранительные органы могут продлить процедуру задержания.</p>
+<p><strong style='color: red;'>Наказание - штраф 8 000€, если серьезные нарушения - временный депорт по усмотрению администрации или суда</strong></p>
+<hr>
+
+<h3>Статья 2. Отсутствие индикатора розыска при условии предварительного совершения преступления</h3>
+<p>Если игрок совершает правонарушение без наличия индикатора розыска (звездочек), он все равно обязан подчиниться требованиям правоохранителей в случае задержания. Любые попытки избежать задержания или отказаться от выполнения законных требований полиции в таких случаях рассматриваются как уклонение от ответственности.</p>
+<p><strong style='color: red;'>Наказание – временный депорт на 2 суток</strong></p>
+
+        `)">
+        <div class="item-number"><small><b>28</b></small></div>
+        <b><span>Ответственность при потере или отсутствии индикатора сыска</span></b>
+      </div>
+
+       
+        <div class="menu-item" onclick="openModal('Забороняється використання техніки Bunnyhop (Bhop), коли гравець постійно стрибає для прискорення свого руху, що дає йому незаслужену перевагу, зокрема під час бою або перестрілки, ускладнюючи точність стрільби для супротивників. Це порушує принципи реалістичної гри та справедливої боротьби.', 'Покарання - депорт на 3 доби')">
+            <div class="item-number"><small><b>29</b></small></div>
+            <b><span>Bunnyhop (Bhop)</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Запрещается самостоятельно создавать значимые события или принимать решения без участия других игроков или без логического развития ситуации в игре, включая сочинение событий (например, взрыв в городе без отработки сцены), одностороннее разрешение конфликтов (например, бегство из-под ареста без отработки ситуации) и т.д. Категорически запрещено проводить какие-либо инвенты, мероприятия, акции, масштабные собрания и т.п. без согласования и разрешения администрации. Все действия должны соответствовать игровой реальности и обеспечивать взаимодействие с другими участниками.', 'Наказание - депорт на 4 суток')">
+            <div class="item-number"><small><b>30</b></small></div>
+            <b><span>Самовольные действия</span></b>
+        </div>        
+
+
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>КПП и блокпосты</h2> 
+
+<h3>Статья 1. Использование шипов на блокпостах и ​​КПП</h3>
+<p>Шипы на блокпостах и ​​контрольно-пропускных пунктах могут быть установлены правоохранителями для остановки транспортных средств. В случае, если приближающееся лицо не находится в розыске и не имеет других законных оснований для остановки, шипы должны быть немедленно изъяты после проверки транспортного средства. Если после этого транспортное средство приближается к блокпоста или КПП и возникает необходимость в дальнейшем контроле, шипы должны быть установлены повторно.</p>
+<p><strong style='color: red;'>Наказание - если лицо, не находящееся в розыске, наехало на шипы, установленные правоохранительным органом, компенсация осуществляется установившим их органом и составляет до 7 000€</strong></p>
+<hr>
+
+<h3>Статья 2. Установка КПП или блокпостов</h3>
+<p>Установка блокпостов и КПП запрещается в центральных районах города, в частности: территория возле банка, территория возле юбилера, центральный мост возле Ares Fuel, рыночные площади и остановки общественного транспорта. Эти места являются важными транспортными артериями, и любое ограничение движения в этих зонах оказывает негативное влияние на общий трафик города. Исключением являются случаи массированных атак или чрезвычайных ситуаций, когда установка КПП или блокпостов может быть необходимой для обеспечения безопасности граждан. В таких ситуациях нужно получить распоряжение от администрации. <br><i>Для четкой идентификации зон добавляется схематическое фото ниже, отображающее границы территорий, где установка КПП или блокпостов разрешена и запрещена.</i></p>
+<img src='https://i.postimg.cc/sf6YqHrS/v7-3.png' alt='' style='margin-top: 10px; border-radius: 10px; max-width: 100%; height: auto;'>
+<p><strong style='color: red;'>Наказание – временный депорт на 2 суток</strong></p>
+<hr>
+
+<h3>Статья 3. Препятствование экстренным службам</h3>
+<p>Запрещается задерживать, блокировать или ограничивать проезд экстренных служб (полиция, скорая помощь, пожарная служба и администрация в том числе) на блокпостах или контрольно-пропускных пунктах при исполнении ими служебных обязанностей. Все блокпосты должны обеспечивать немедленный проезд для таких транспортных средств без задержек.</p>
+<p><strong style='color: red;'>Наказание – штраф 16 000€ или временный депорт до 5 суток</strong></p>
+<hr>
+
+<h3>Статья 4. Поведение правоохранительных органов</h3>
+<p>Правоохранители должны соблюдать высокие стандарты поведения на блокпостах и ​​КПП, проявлять уважение к гражданам и соблюдать законы и этику. Их действия должны быть четкими, обоснованными и документированными. Физическая сила может применяться только при необходимости без агрессии или дискриминации. Проверки должны быть оперативными, без задержек и с учетом комфорта и безопасности граждан.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт до 3 суток</strong></p>
+<hr>
+
+<h3>Статья 5. Обязанность игроков по остановке</h3>
+<p>Граждане обязаны останавливаться на блокпостах и ​​КПП по требованию правоохранителей для проверки документов и транспорта. Они должны выполнять указания правоохранителей, предоставлять необходимую информацию и документы, не сопротивляться и соблюдать правила безопасности.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€</strong></p>
+
+        `)">
+        <div class="item-number"><small><b>31</b></small></div>
+        <b><span>КПП и блокпосты</span></b>
+      </div>
+
+            <div class="menu-item" onclick="openModal(`
+            <h2>Зеленые зоны (Green zone)</h2> 
+<p>Зеленая зона — это безопасная территория, где игроки могут чувствовать себя в безопасности и взаимодействовать без страха от агрессивных действий или насилия. </p> <b>В зеленые зоны на сервере входит:</b> 
+<li>Больница</li> 
+<li>Полицейский участок</li> 
+<li>Пожарная часть</li> 
+<br><b>На карте зеленые круги обозначают местоположение этих зон.</b> 
+<p>Эти места предназначены для спокойного общения и взаимодействия между игроками, где не допускается агрессия или нарушение правил сервера.</p> <p>Любые проявления агрессии, конфликтные действия и использование оружия строго запрещены. На территории Зеленых зон запрещается проявлять агрессию, провоцировать конфликты, вытаскивать или использовать оружие.</p> 
+<img src='https://i.postimg.cc/5NfZPjxy/image.png' alt='' style='margin-top: 10px; border-radius: 10px; max-width: 100%; height: auto;'> 
+`, 'Наказание – временный депорт на 5 суток.<br> Если игрок использовал оружие и имел лицензию – конфискация.')">
+            <div class="item-number"><small><b>32</b></small></div>
+            <b><span>ЗЕЛЕНЫЕ ЗОНЫ</span></b>
+        </div> 
+          
+        <div class="menu-item" onclick="openModal('Запрещается массовая рассылка рекламных сообщений, таких как предложения такси, услуг, коммерческих объявлений и т.д. Такие действия манипулятивны и могут негативно влиять на игровой опыт других пользователей, отвлекая их и нарушая общий порядок на сервере. Рекламные интеграции допускаются только с согласия администрации.', 'Наказание - временный или постоянный депорт по решению администрации')">
+            <div class="item-number"><small><b>33</b></small></div>
+            <b><span>Спам и реклама</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Запрещено выполнять действия, противоречащие логике и реалистичности ролевой игры. Все действия, нарушающие принципы РП (например, случайные или бессмысленные поступки, не соответствующие характеру персонажа или ситуации), будут считаться Нон-RP поведением. Все сроки, связанные с RP и нон-RP, а также что такое RP, вы можете прочитать, нажав на сайта.</small></b>', 'Наказание - временный или постоянный депорт в зависимости от серьезности нарушения')">
+            <div class="item-number"><small><b>34</b></small></div>
+            <b><span>Нон-RP поведение</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Запрещены какие-либо действия, направленные на введение других игроков в заблуждение, включая фальшивые сделки, финансовые махинации, манипуляции, провокации (байтинг) или распространение заведомо ложной информации. В частности, запрещается вызывать полицию или другие службы, сообщая о событиях, которые на самом деле не происходят, или вводить правоохранителей в заблуждение с целью отвлечения или развлечения.', 'Наказание - штраф или депорт по решению суда или администрации')">
+            <div class="item-number"><small><b>35</b></small></div>
+            <b><span>Мошенничество, обман, байтинг и дезинформация</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal('Запрещается оставлять большой объем мусора или ненужных предметов на публичных территориях (кроме частной собственности). Это включает в себя оставление вещей в общественных местах, которые могут загрязнить игровое пространство или создавать препятствия для других игроков.', 'Наказание - штраф 5 000€ или депорт в сутки')">
+            <div class="item-number"><small><b>36</b></small></div>
+            <b><span>Оставление мусора или ненужных предметов</b></span>
+        </div>
+
+
+
+        <div class="menu-item" onclick="openModal(`
+        <h2><h2>Предпринимательство и трудовое право</h2>
+        
+<h3>Статья 1. Регистрация бизнесов и предприятий</h3>
+<p>Все бизнесы и предприятия должны быть официально зарегистрированы на сервере. Незарегистрированные бизнесы или предприятия запрещены. Для регистрации перейдите по кнопке ниже.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000 € или временная депортация на 2 дня</strong></p>
+<a href='https://t.me/UkraineRPBusiness_bot?start=start' target='_blank' style='display: inline-block; background-color: #ff9e3d; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px;'>ЗАРЕГИСТРИРОВАТЬ</a>
+<hr>
+<h3>Статья 2. ТРУДОВОЙ КОДЕКС</h3>
+
+<h3>1. Цели и задачи Трудового кодекса Сервера</h3>
+<p>1.1. Целью Трудового кодекса сервера является установление прав и обязанностей субъектов трудовых правоотношений, обеспечение реализации предусмотренных Конституцией сервера трудовых прав и гарантий работников, создание надлежащих условий труда, обеспечение защиты прав и интересов работников и работодателей.</p>
+<p>1.2. Задачей настоящего Кодекса является правовое регулирование вопросов, касающихся: реализации права на труд; условий труда; защиты прав работников; обеспечения безопасных и здоровых условий труда; своевременной и в полном объеме выплаты заработной платы.</p>
+        
+<h3>2. Основные правила правового регулирования трудовых отношений</h3>
+<p>2.1. Правовое регулирование трудовых отношений осуществляется на основе: свободы труда, включающей право на труд, который каждый свободно выбирает или на который свободно соглашается; запрета принудительного труда; недопущения дискриминации в сфере труда и обеспечения лицам, подвергшимся дискриминации, права на обращение в суд с целью признания факта дискриминации и её устранения, а также возмещения ущерба, причинённого вследствие дискриминации; равенства прав и возможностей работников, включая гендерное равенство, путём обеспечения единства и дифференциации условий труда; создания надлежащих, безопасных и здоровых условий труда и отдыха; обеспечения судебной защиты трудовых прав, чести и достоинства участников трудовых отношений.</p>
+        
+<h3>3. Запрет дискриминации в сфере труда</h3>
+<p>3.1. Запрещается любая дискриминация в сфере труда, в частности нарушение принципа равенства прав и возможностей, прямое или косвенное ограничение прав работников в зависимости от расы, цвета кожи, политических, религиозных и других убеждений, пола, этнического, социального и иностранного происхождения, возраста, состояния здоровья, инвалидности, семейного и имущественного положения, семейных обязанностей, места проживания, членства в профсоюзе или другой организации граждан, участия в забастовке, обращения в суд или другие органы за защитой своих прав или оказания поддержки другим работникам в защите их прав, по языковым или иным признакам, не связанным с характером работы или условиями её выполнения.</p>
+        
+<h3>4. Запрет принудительного труда</h3>
+<p>4.1. Запрещается применение принудительного труда, то есть труда, на который лицо не предложило добровольно своих услуг и выполнение которого принуждается угрозой наказания или применения насилия.</p>
+<p>4.2. Не считается принудительным трудом: работа, выполняемая лицом по приговору или решению суда, при условии, что она выполняется под надзором и контролем соответствующего органа государственной власти.</p>
+        
+<h3>5. Заработная плата</h3>
+<p>5.1. Работодатель обязан гарантировать работникам своевременную и в полном объеме выплату заработной платы, обеспечивающую достойный уровень жизни.</p>
+<p>5.2. За равный труд должна быть обеспечена равная заработная плата, независимо от статуса работника или иных признаков.</p>
+        
+<h3>6. Налоги</h3>
+<p>6.1. Работодатель обязан уплачивать налоги в законном порядке не только за себя, но и за своих работников и имущество, которым он владеет.</p>
+<p>6.2. Работник независимо от работодателя обязан обеспечивать уплату налогов за себя и своё имущество.</p>
+        
+<h3>7. Права и обязанности работников и работодателей</h3>
+<p>7.1. Работники имеют право на: надлежащие условия труда и отдыха; своевременную оплату труда; защиту от дискриминации и принудительного труда; безопасность и охрану труда.</p>
+<p>7.2. Работодатели обязаны: обеспечивать надлежащие условия труда; осуществлять своевременную выплату заработной платы; обеспечивать защиту прав работников.</p>
+        
+<h3>8. Ответственность за нарушение Трудового кодекса</h3>
+<p>8.1. Работники, нарушающие трудовые обязанности, несут ответственность в соответствии с внутренними правилами сервера и положениями настоящего Кодекса.</p>
+<p>8.2. Работодатели, не выполняющие свои обязательства, несут ответственность за нарушение условий труда и других прав работников.</p>
+        
+<br>
+        
+<table border='1'>
+  <thead>
+    <tr>
+      <th>Нарушение</th>
+      <th>Статья</th>
+      <th>Наказание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Неуплата налога</td><td>6.1</td><td>Штраф 16 000 € за каждого работника или временная депортация на 14 дней</td></tr>
+    <tr><td>Дискриминация в сфере труда</td><td>3.1</td><td>Штраф 16 000 € или предупреждение</td></tr>
+    <tr><td>Принудительный труд</td><td>4.1</td><td>Штраф 24 000 € или закрытие бизнеса</td></tr>
+    <tr><td>Невыплата заработной платы</td><td>5.1</td><td>Штраф 56 000 € или временный запрет деятельности на 14 дней</td></tr>
+    <tr><td>Необеспечение равной оплаты за равный труд</td><td>5.2</td><td>Штраф 32 000 €</td></tr>
+    <tr><td>Необеспечение гарантий трудовых прав</td><td>7.1</td><td>Штраф 16 000 €</td></tr>
+    <tr><td>Невыполнение условий труда</td><td>2.1</td><td>Штраф 24 000 €</td></tr>
+    <tr><td>Невыполнение трудовых обязанностей</td><td>8.1</td><td>Штраф 16 000 € или временное отстранение за неисполнение трудовых обязанностей</td></tr>
+    <tr><td>Нарушение правил поведения на рабочем месте</td><td>7.2</td><td>Штраф 16 000 € или предупреждение за нарушение внутренних правил поведения на рабочем месте</td></tr>
+  </tbody>
+</table></td></tr>
+          </tbody>
+        </table>
+        `)">
+          <div class="item-number"><small><b>37</b></small></div>
+          <b><span>Предпринимательство и трудовое право</span></b>
+        </div>
+
+        <div class="menu-item" onclick="openModal('На сервере запрещается продажа, обмен или передача незаконных предметов, товаров или ресурсов.', 'Наказание – штраф до 16 000€')">
+            <div class="item-number"><small><b>38</b></small></div>
+            <b><span>Продажа контрабанды</b></span>
+        </div>
+
+        <div class="menu-item" onclick="openModal(`
+        <h2>Оружие</h2> 
+
+<h3>Статья 1. Ношение оружия в публичных местах</h3>
+<p>Запрещено открыто носить, демонстрировать или безосновательно вытаскивать оружие в общественных открытых и людных местах (улицы, парки, площади, магазины, государственные учреждения и т.п.). Использование оружия разрешено исключительно в случаях реальной угрозы для жизни.</p>
+<p><strong style='color: red;'>Наказание - штраф 8 000€ и конфискация лицензии (если есть)</strong></p>
+<hr>
+
+<h3>Статья 2. Неправомерное использование оружия</h3>
+<p>Запрещается использовать оружие в игровом процессе без соответствующих оснований или совершать агрессивные действия без предупреждения. Нападение на других игроков без законной причины, а также любая стрельба в воздух или другие безосновательные действия с оружием является нарушением правил.</p>
+<p><strong style='color: red;'>Наказание - штраф 8 000€ и конфискация лицензии (если есть)</strong></p>
+<hr>
+<h3>Статья 3. Нелегальное оружие</h3>
+<p>Запрещается владение, хранение и использование оружия без лицензии на него, поскольку это создает опасность для игроков.</p>
+<p><strong style='color: red;'>Наказание – конфискация оружия и штраф размером 4 000€</strong></p>
+        `)">
+        <div class="item-number"><small><b>39</b></small></div>
+        <b><span>Оружие</span></b>
+      </div>
+
+<div class="menu-item" onclick="openModal('Запрещен павергейминг – выполнение нереалистичных или принудительных действий в RP, противоречащих логике реального мира или лишающих других игроков возможности адекватно отреагировать. К таким действиям относятся сочинение сверхчеловеческих способностей, игнорирование физических ограничений (например, после ДТП игрок встает и убегает, как ни в чем не бывало) и навязывание результата взаимодействия без согласия другого игрока.', 'Наказание - депорт на 2 суток')">
+    <div class="item-number"><small><b>40</b></small></div>
+    <b><span>Запрет павергейминга – нереалистические действия в RP</b></span>
+</div>
+
+<div class="menu-item" onclick="openModal('Запрещается использовать любую информацию, полученную вне игры (OOC), для воздействия на внутриигровой процесс (IC). Это включает получение игрового преимущества через посторонние платформы, такие как Discord, Telegram или стрим, а также чтение OOC-чата для предсказания событий или изменения их хода в игре.', 'Наказание - депорт на 2 суток')">
+    <div class="item-number"><small><b>41</b></small></div>
+    <b><span>Запрет мета-игры – использование OOC (Out of Character)</b></span>
+</div>
+
+
+<div class="menu-item" onclick="openModal(`
+<h2>Адвокадская деятельность</h2>
+
+<h3>Статья 1. Адвокатская лицензия</h3>
+<p>Адвокаты являются независимыми лицами, и для того чтобы работать адвокатом на сервере, нужно приобрести адвокатскую лицензию. Работать без нее запрещено. Лицензию можно получить через бота по кнопке ниже.</p>
+<p><strong style='color: red;'>Наказание – временный депорт на 2 суток</strong></p>
+
+<a href='https://t.me/LawyersLicensebot?start=start' target='_blank' style='display: inline-block; background-color: #ff9e3d; color: white; padding: 10px 15px; text-decoration: нет; border-radius: 5px;'>ПЕРЕЙТЫ В БОТ</a>
+<hr>
+
+<h3>Статья 2. Поведение адвокатов</h3>
+<p>Адвокаты обязаны соблюдать профессиональную этику, быть честными, справедливыми и не использовать свой статус для личной выгоды. Запрещается обманывать или манипулировать клиентами или другими участниками процесса, а также влиять на другие роли или органы власти.</p>
+<p><strong style='color: red;'>Наказание – депорт на 5 суток</strong></p>
+
+`)">
+<div class="item-number"><small><b>42</b></small></div>
+<b><span>Адвокадская деятельность</span></b>
+</div>    
+
+
+<div class="menu-item" onclick="openModal(`
+<h2>ТАКСИ</h2>
+
+<h3>Статья 1. Таксистская лицензия</h3>
+<p>Чтобы легально работать таксистом, нужно обязательно приобрести лицензию через наш бот. Без наличия лицензии работа таксистом запрещена. Лицензию можно получить через бота по кнопке ниже.</p>
+<p><strong style='color: red;'>Наказание – временный депорт на 2 суток</strong></p>
+
+<a href='https://t.me/TaxiDriverLicense_bot?start=start' target='_blank' style='display: inline-block; background-color: #ff9e3d; color: white; padding: 10px 15px; text-decoration: нет; border-radius: 5px;'>ПЕРЕЙТЫ В БОТ</a>
+<hr>
+
+<h3>Статья 2. Цены на услуги</h3>
+<p>Таксисты не вправе устанавливать собственные цены на услуги. Цены должны соответствовать тем, что указаны в официальном канале Telegram по кнопке ниже. Разрешено работать только на автомобилях, указанных в этом канале. Если вашего автомобиля нет в списке, использовать его для предоставления услуг такси запрещено.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт на 2 суток</strong></p>
+<a href='https://t.me/TaxiUkraineRP' target='_blank' style='display: inline-block; background-color: #ff9e3d; color: white; padding: 10px 15px; text-decoration: нет; border-radius: 5px;'>ПРОСМОТРИТЬ ЦЕНЫ</a>
+<hr>
+
+<h3>Статья 3. Поведение таксистов</h3>
+<p>Таксисты должны соблюдать должное поведение при взаимодействии с клиентами. При приеме заказа таксист обязан назвать свой код клиенту. Также запрещено хамить клиентам. Таксист должен доставить пассажира до конца поездки, выполняя все условия договора, и такое же правило применимо к пассажирам, которые должны вести себя корректно.</p>
+<p><strong style='color: red;'>Наказание – штраф 8 000€ или временный депорт на 2 суток</strong></p>
+
+`)">
+<div class="item-number"><small><b>43</b></small></div>
+<b><span>ТАКСИ</span></b>
+</div>  
+
+        <div class="menu-item" onclick="openModal('Запрещается отсутствие реакции персонажа на реальную угрозу, например, когда персонаж не проявляет страха или не подчиняется требованиям, когда на него направлено оружие или он находится в опасной ситуации.', 'Наказание – депорт на 5 суток')">
+            <div class="item-number"><small><b>44</b></small></div>
+            <b><span>FZ (FearRP)</b></span>
+        </div>     
+      
+        
+    <div class="overlay" onclick="closeModal()"></div>
+    <div class="modal" id="ruleModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="ruleText"></p>
+        <p class="penalty" id="penaltyText"></p>
+    </div>
+</div>
+
+
+<div class="org-section">
+    <h2>ДЕРЖАВНЫЕ ОРГАНИ</h2>
+  
+    <div class="org-tabs">
+  
+
+      <input type="radio" name="org-tab" id="admin">
+      <input type="radio" name="org-tab" id="pol">
+      <input type="radio" name="org-tab" id="court">
+      <input type="radio" name="org-tab" id="dbr">
+      <input type="radio" name="org-tab" id="sbs">
+      <input type="radio" name="org-tab" id="mvs">
+  
+   
+      <div class="org-buttons">
+        <label for="admin" class="org-btn admin">АДМИНИСТРАЦИЯ</label>
+        <label for="pol" class="org-btn pol">ПОЛИЦИЯ</label>
+        <label for="court" class="org-btn court">СУД</label>
+        <label for="dbr" class="org-btn dbr">ДБР</label>
+        <label for="sbs" class="org-btn sbs">СБС</label>
+        <label for="mvs" class="org-btn mvs">МВД</label>
+      </div>
+  
+
+      <div class="org-content">
+        <div class="org-tab-content admin">
+          <h3>АДМИНИСТРАЦИЯ</h3>
+          <p><b>ОБЩИЕ ПОЛОЖЕНИЯ</b><br>
+            Администрация имеет право наказывать игроков за любые нарушения правил сервера, чтобы обеспечить порядок и поддерживать RP-атмосферу. Она отвечает за соблюдение правил, оказание помощи игрокам и контролирование их действий. поведения.</p> 
+<hr> 
+<b>ПОЛНОМОЧИЯ</b><br> 
+Полномочия администрации различны для каждого уровня и распределяются в соответствии с внутренним регламентом и структурой административного состава. 
+<hr> 
+<b>ПРАВИЛА</b> 
+<ul> 
+<li><strong>Соблюдение роли и RP-процесса</strong> 
+<ul> 
+<li><strong>1.1.</strong> Администратор должен оставаться в рамках своей роли и не вмешиваться в игровой процесс без необходимости.</li> 
+<li><strong>1.2.</strong> Все действия администратора должны соответствовать RP-процессу и не нарушать атмосферу игры.</li> 
+</ul> 
+</li> 
+<li><strong>Знание правил</strong> 
+<ul> 
+<li><strong>2.1.</strong> Администратор обязан отлично знать все правила сервера и строго их соблюдать.</li> 
+<li><strong>2.2.</strong> В случае изменений или дополнений к правилам администратор обязан ознакомиться с ними и действовать соответственно.</li> 
+</ul> 
+</li> 
+<li><strong>Обоснованные наказания</strong> 
+<ul> 
+<li><strong>3.1.</strong> Любой бан, кик или другое наказание должно быть аргументировано и соответствовать нарушению.</li> 
+<li><strong>3.2.</strong> При выдаче бана обязательно указывать четкую причину в соответствующей ветке.</li> 
+</ul> 
+</li> 
+<li><strong>Запрет злоупотребления административными правами</strong> 
+<ul> 
+<li><strong>4.1.</strong> Администратору запрещено использовать свои права для личной выгоды или привилегий.</li> 
+<li><strong>4.2.</strong> Запрещено помогать игрокам вне RP-процесса.</li> 
+</ul> 
+</li> 
+<li><strong>Объективность и беспристрастность</strong> 
+<ul> 
+<li><strong>5.1.</strong> Администратор не должен руководствоваться личными симпатиями или антипатиями при вынесении решений.</li> 
+<li><strong>5.2.</strong> Все игроки равны перед правилами независимо от статуса, опыта или знакомств.</li> 
+</ul> 
+</li> 
+<li><strong>Адекватная коммуникация</strong> 
+<ul> 
+<li><strong>6.1.</strong> Администратор должен вести себя вежливо и не вступать в конфликты с игроками.</li> 
+<li><strong>6.2.</strong> В случае жалоб или вопросов администрация должна рассматривать их конструктивно.</li> 
+</ul> 
+</li> 
+<li><strong>Служебная этика</strong> 
+<ul> 
+<li><strong>7.1.</strong> Внутренние обсуждения и административная информация не должны выноситься за пределы админ-состава.</li> 
+<li><strong>7.2.</strong> Администратор должен сохранять конфиденциальность внутренней информации сервера.</li> 
+</ul> 
+</li> 
+<li><strong>Использование административных команд</strong> 
+<ul> 
+<li><strong>8.1.</strong> Администратор имеет право использовать только команды, разрешенные для его уровня администрации.</li> 
+<li><strong>8.2.</strong> Администратор имеет право использовать только команды, которые разрешены для роли.</li> 
+<li><strong>8.3.</strong> Использование административных команд для развлечений, троллинга игроков или получения личных предпочтений запрещено.</li> 
+<li><strong>8.4.</strong> Запрещается назначать события, создавать ситуации или предоставлять игрокам возможности, не предусмотренные игровым процессом.</li> 
+</ul> 
+</li> 
+<li><strong>Серьезность в исполнении обязанностей</strong> 
+<ul> 
+<li><strong>9.1.</strong> Администратор должен действовать в рамках правил и законов сервера, выполняя свои обязанности с ответственностью.</li> 
+<li><strong>9.2.</strong> Запрещено "баловаться" с игроками, злоупотреблять полномочиями или намеренно создавать хаос в игре.</li> 
+<li><strong>9.3.</strong> Все решения администратора должны быть обоснованными, продуманными и соответствовать установленным правилам.</li> 
+</ul> 
+</li> 
+<li><strong>Ответственность за свои действия</strong> 
+<ul> 
+<li><strong>10.1.</strong> Администратор несет ответственность за каждое решение. В случае ошибки он должен признать ее и исправить ситуацию.</li> 
+<li><strong>10.2.</strong> За нарушение правил администратора может быть сниженов должности или отстранен от административного состава.</li> 
+</ul> 
+</li> 
+<li><strong>Использование команды nametag</strong> 
+<ul> 
+<li><strong>11.1.</strong> Запрещается устанавливать имена, не соответствующие роли игрока.</li> 
+<li><strong>11.2.</strong> Запрещено использовать оскорбительные, нецензурные или провокационные имена.</li> 
+</ul> 
+</li> 
+<li><strong>Соблюдение законности</strong> 
+<ul> 
+<li><strong>12.1.</strong> Администраторы обязаны придерживаться принципа законопослушности и не нарушать установленные правила сервера.</li> 
+<li><strong>12.2.</strong> Администратору запрещено состоять в нелегальных организациях, таких как банды, картели или другие преступные группировки.</li> 
+<li><strong>12.3.</strong> Участие администратора в незаконной деятельности, даже в рамках RP, считается нарушением и может привести к дисциплинарным мерам.</li> 
+</ul> 
+</li> 
+</ul> 
+
+</p> 
+</div> 
+<div class="org-tab-content pol">
+          <h3>ПОЛИЦИЯ</h3>
+                 
+            <h3>ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+          <p>  <p>
+              Полиция является основным органом, который обеспечивает охрану правопорядка, реагирует на вызовы граждан, производит задержание правонарушителей и регулирует дорожное движение. 
+Она действует под руководством Министерства внутренних дел (МВД) и выполняет задачи по обеспечению безопасности на улицах и в общественных местах. 
+</p> 
+<hr> 
+<h3>ПОЛНОМОЧИЯ</h3> 
+Сотрудники полиции имеют право применять меры к игрокам за нарушение следующих пунктов: 1, 2, 4, 5, статьи 5 пункта 32 и пункта 40. 
+<ul> 
+<li>Проведение патрулирования в городах и районах, обеспечение порядка на территории.</li> 
+<li>Задержание лиц, нарушающих законы или угрожающих общественному порядку.</li> 
+<li>Применение силы в рамках RP в случаях угрозы жизни или безопасности.</li> 
+<li>Проведение рейдов в сотрудничестве с другими службами по расследованию или ликвидации правонарушений.</li> 
+<li>Вызов подкрепления или блокировки территории в случае чрезвычайной ситуации (НС).</li> 
+</ul> 
+<hr> 
+<h3>ОБЯЗАННОСТИ</h3> 
+<ul> 
+<li>Оперативное реагирование на вызовы граждан и соответствие скорости реагирования требованиям RP.</li> 
+<li>Соблюдение законов и RP-инструкций при исполнении служебных обязанностей.</li> 
+<li>Оказание первой помощи пострадавшим и охрана места преступления до приезда других служб.</li> 
+<li>Отчетность перед руководством МВД по поводу инцидентов и результатов выполнения задач.</li> 
+</ul> 
+<hr> 
+<h3>ПРАВИЛА</h3> 
+<i><b>Указаны в пункте 14 правил сервера.</b></i> 
+
+</div> 
+</p> 
+<div class="org-tab-content court">
+          <h3>СУД</h3>
+          <p><h3>ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+            <p>Эти правила определяют обязанности и полномочия судей и адвокатов на сервере, а также их поведение при выполнении своих функций. Все участники судебного процесса обязаны соблюдать этики и правила, определенные для этих ролей.</p> 
+<hr> 
+<h3>ПОЛНОМОЧИЯ</h3> 
+<p>У судей и адвокатов есть определенные полномочия, которые определяют их права и обязанности во время судебного процесса. Судья управляет процессом, принимает решения и выносит приговоры, а адвокат представляет интересы своего клиента и оказывает ему правовую помощь.</p> 
+<hr> 
+<h3>ПРАВИЛА</h3> 
+<h3>Правила для Судей</h3> 
+<ul> 
+<li><strong>1. Соблюдение роли и RP-процесса</strong> 
+<ul> 
+<li>1.1. Судья должен действовать в рамках своей роли и не вмешиваться в игровой процесс без необходимости.</li> 
+<li>1.2. Судья не имеет права вмешиваться в судебный процесс без наличия юридической необходимости.</li> 
+</ul> 
+</li> 
+<li><strong>2. Знание правил</strong> 
+<ul> 
+<li>2.1. Судья обязан отлично знать все правила сервера и строго соблюдать их.</li> 
+<li>2.2. Судья обязан быть осведомлен о актуальных изменениях и дополнениях к правилам.</li> 
+</ul> 
+</li> 
+<li><strong>3. Обоснованные решения</strong> 
+<ul> 
+<li>3.1. Каждое судебное решение должно быть аргументировано и принято на основании фактов и доказательств.</li> 
+<li>3.2. Судья должен указывать четкую причину принятия каждого решения.</li> 
+</ul> 
+</li> 
+<li><strong>4. Запрет на злоупотребление судебными полномочиями</strong> 
+<ul> 
+<li>4.1. Судьям запрещено использовать свои полномочия для личной выгоды.</li> 
+<li>4.2. Запрещено принимать решения под влиянием личных предпочтений или эмоций.</li> 
+</ul> 
+</li> 
+<li><strong>5. Объективность и беспристрастность</strong> 
+<ul> 
+<li>5.1. Судья должен оставаться объективным, без предубеждений по отношению к игрокам.</li> 
+<li>5.2. Судья не имеет права оценивать ситуацию, основываясь на личных симпатиях.</li> 
+</ul> 
+</li> 
+<li><strong>6. Адекватная коммуникация</strong> 
+<ul> 
+<li>6.1. Судья должен вести коммуникацию с участниками судебного процесса корректно и учтиво.</li> 
+<li>6.2. Судья должен реагировать конструктивно на вопросы и жалобы.</li> 
+</ul> 
+</li> 
+<li><strong>7. Служебная этика</strong> 
+<ul> 
+<li>7.1. Судья обязан сохранять конфиденциальность по рассмотрению дел.</li> 
+<li>7.2. Нельзя выносить внутренние обсуждения за рамки судебной системы.</li> 
+</ul> 
+</li> 
+<li><strong>8. Использование судебных полномочий</strong> 
+<ul> 
+<li>8.1. Судья имеет право использовать только инструменты и команды, которые разрешены для его роли.</li> 
+<li>8.2. Запрещено использовать судебные полномочия по манипуляциям в игре.</li> 
+</ul> 
+</li> 
+<li><strong>9. Серьезность в исполнении обязанностей</strong> 
+<ul> 
+<li>9.1. Судья должен действовать ответственно и серьезно, выполняя свои обязанности.</li> 
+<li>9.2. Судья не имеет права относиться к своим обязанностям как к шутке.</li> 
+</ul> 
+</li> 
+<li><strong>10. Ответственность за свои действия</strong> 
+<ul> 
+<li>10.1. Судья несет ответственность за каждое решение.</li> 
+<li>10.2. За нарушение правил судья может быть отстранен от исполнения своих обязанностей.</li> 
+</ul> 
+</li> 
+</ul> 
+
+<h3>Правила для адвокатов</h3> 
+<ul> 
+<li><strong>1. Соблюдение роли и RP-процесса</strong> 
+<ul> 
+<li>1.1. Адвокат должен действовать в пределах своей роли, не нарушая RP-процесс.</li> 
+<li>1.2. Адвокат не имеет права вмешиваться в судебный процесс без юридической необходимости.</li> 
+</ul> 
+</li> 
+<li><strong>2. Знание правил</strong> 
+<ul> 
+<li>2.1. Адвокат обязан отлично знать все правила сервера и правила судебного процесса.</li> 
+<li>2.2. Адвокат должен соблюдать этику подвремя представления доказательств в суде.</li> 
+</ul> 
+</li> 
+<li><strong>3. Обоснованные доводы</strong> 
+<ul> 
+<li>3.1. Адвокат обязан давать четко сформулированные и обоснованные аргументы.</li> 
+<li>3.2. Все аргументы должны быть законными и соответствовать правилам сервера.</li> 
+</ul> 
+</li> 
+<li><strong>4. Запрет на злоупотребление адвокатскими полномочиями</strong> 
+<ul> 
+<li>4.1. Адвокаты не могут использовать свои полномочия для манипуляций.</li> 
+<li>4.2. Запрещено давать ложные доказательства, чтобы помочь клиенту избежать наказания.</li> 
+</ul> 
+</li> 
+<li><strong>5. Объективность и беспристрастность</strong> 
+<ul> 
+<li>5.1. Адвокат должен оставаться беспристрастным в процессе защиты клиента.</li> 
+<li>5.2. Адвокат не имеет права прибегать к другим участникам суда.</li> 
+</ul> 
+</li> 
+<li><strong>6. Адекватная коммуникация</strong> 
+<ul> 
+<li>6.1. Адвокат обязан вести коммуникацию с другими участниками процесса корректно.</li> 
+<li>6.2. Адвокат должен реагировать на вопросы и жалобы в рамках своих обязанностей.</li> 
+</ul> 
+</li> 
+<li><strong>7. Служебная этика</strong> 
+<ul> 
+<li>7.1. Адвокат обязан сохранять конфиденциальность по отношению к своему клиенту.</li> 
+<li>7.2. Запрещено передавать конфиденциальную информацию без согласия клиента.</li> 
+</ul> 
+</li> 
+<li><strong>8. Использование адвокатских полномочий</strong> 
+<ul> 
+<li>8.1. Адвокат имеет право использовать только команды, которые разрешены для его роли.</li> 
+<li>8.2. Адвокат не имеет права манипулировать судебным процессом.</li> 
+</ul> 
+</li> 
+<li><strong>9. Серьезность в исполнении обязанностей</strong> 
+<ul> 
+<li>9.1. Адвокат должен относиться к своим обязанностям серьезно и ответственно.</li> 
+<li>9.2. Запрещено использовать роль адвоката в нарушении правил сервера.</li> 
+</ul> 
+</li> 
+<li><strong>10. Ответственность за свои действия</strong> 
+<ul> 
+<li>10.1. Адвокат несет ответственность за свои действия в ходе судебного процесса.</li> 
+<li>10.2. За нарушение правил, адвокат может быть лишен своего статуса.</li> 
+</ul> 
+</li> 
+</ul> 
+
+
+</p> 
+</div> 
+<div class="org-tab-content dbr">
+          <h3>ДБР</h3>
+          <p>
+
+            <h3>ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+            <p>
+              Государственное Бюро расследований (ДБР) - это структура, которая подчиняется Министерству внутренних дел (МВД) и осуществляет досудебное расследование по делам, связанным с правонарушениями со стороны должностных лиц органов государственной власти, правоохранительных органов и административных структур. Основная цель ДБР – обеспечение справедливости, прозрачности и соблюдения закона в деятельности государственных служб и органов. 
+</p> 
+
+<b>Основные принципы работы ДБР:</b> 
+<ul> 
+
+<li>Законность и объективность</li> 
+<li>Независимость от других органов</li> 
+<li>Конфиденциальность расследований</li> 
+<li>RP-соблюдение процедур и реализм действий</li> 
+</ul> 
+<hr> 
+<h3>ПОЛНОМОЧИЯ</h3> 
+Сотрудники ДБР имеют право применять меры к игрокам за нарушение следующих пунктов: 14, 26, 39 и 40. 
+<ul> 
+<li>Расследование должностных преступлений должностных лиц (Полиция, СБС, Администрация, МВД и т.д.).</li> 
+<li>Использование RP-методов: наблюдение, допросы, фиксация доказательств.</li> 
+<li>Получение ордеров через Суд на обыск или задержание.</li> 
+<li>Привлечение к ответственности через передачу дел в Суд.</li> 
+<li>Проведение спецопераций по согласованию.</li> 
+<li>Отстранение должностных лиц при обоснованном подозрении.</li> 
+</ul> 
+<hr> 
+<h3>ОБЯЗАННОСТИ</h3> 
+<ul> 
+<li>Соблюдение RP-процедур и симуляции реального следствия.</li> 
+<li>Фиксация каждого действия (отчеты, видео).</li> 
+<li>Передача материалов следствия в МВД или Суд.</li> 
+<li>Соблюдение конфиденциальности служебной информации.</li> 
+<li>Обеспечение нейтральности и объективности в расследованиях.</li> 
+<li>Защита прав граждан и соблюдение законов RP-сервера.</li> 
+</ul> 
+<hr> 
+<h3>ПРАВИЛА</h3> 
+<ol> 
+<li>Запрещено расследование без RP-оснований и доказательств.</li> 
+<li> 
+Использование оружия Работник не имеет права применять оружие без серьезной причины. 
+Разрешено только в случаях самозащиты, прямой угрозы или при получении ответного оружия. 
+Запрещено убивать работников других госорганов без подтверждения RP. 
+</li> 
+<li> 
+Должности и звания: 
+Повышение возможно только по результатам работы. Запрещено разглашать свой пост и звание. 
+</li> 
+<li>Сотрудник должен соблюдать правила сервера.</li> 
+<li>В случае RP-необходимости сотрудничество с другими органами (Полиция, СБС) важно и рекомендовано для достижения общих целей.</li> 
+<li>Повиновение приказам Директора, его заместителей и администрации сервера обязательно.</li> 
+<li> 
+RP-взятки: Разрешено имитировать взятку только для разоблачения коррупционера. 
+Использование в личных целях не допускается. 
+</li> 
+<li>За нарушение — наказание от Директора, Администрации или ИИКа.</li> 
+<li>Обязательно участие в собраниях, встречах и тренировках.</li> 
+<li>Запрещено вызывать игроков без соответствующих RP-причин.</li> 
+<li>На службе разрешено говорить только на украинском языке.</li> 
+</ol> 
+
+</p> 
+</div> 
+<div class="org-tab-content sbs">
+          <h3>СБС</h3>
+          <p><h3>ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+            <p>Служба Безопасности Сервера (СБС) – это структура, которая подчиняется Министерству внутренних дел (МВД) и является надзорным органом, осуществляющим контроль за соблюдением RP-правил всеми участниками сервера, включая государственные и частные организации. Основная цель ССС — поддержание честной, безопасной и дисциплинированной игры через выявление нарушений, расследование внутренних инцидентов и противодействие коррупции.</p> 
+<hr> 
+
+<h3>ПОЛНОМОЧИЯ</h3> 
+Сотрудники ССС имеют право применять меры к игрокам за нарушение следующих пунктов: 1, 4, 5, 7, 9, 24, 26, 27, 28, 32, 33, 37, 39 и 40. 
+<ul> 
+<li>Проведение надзора за деятельностью государственных органов и служб в рамках RP.</li> 
+<li>Обнаружение нарушений RP-правил (MG, PG, RDM, NRP и т.д.) среди игроков и служащих.</li> 
+<li>Расследование внутренних инцидентов и жалоб о злоупотреблениях служебным положением.</li> 
+<li>Обнаружение и документирование фактов коррупции среди работников государственных структур.</li> 
+<li>Сбор доказательной базы для передачи дел в ДБР, МВД или администрацию сервера.</li> 
+<li>Мониторинг эффективности и добродетели работы полиции, ДБР, администрации и других служб.</li> 
+<li>Предоставление аналитических отчетов относительно уровня дисциплины и потенциальных угроз серверной безопасности.</li> 
+</ul> 
+<hr> 
+
+<h3>ОБЯЗАННОСТИ</h3> 
+<ul> 
+<li>Действовать объективно, беспристрастно и независимо от других служб.</li> 
+<li>Проводить проверки в соответствии с внутренним регламентом и RP-сценариями.</li> 
+<li>Фиксовать все обнаруженные нарушения с добавлением доказательств (скриншоты, видео).</li> 
+<li>Вовремя информировать соответствующие органы о случаях коррупции, злоупотреблениях полномочиями или грубых нарушениях RP.</li> 
+<li>Сохранять конфиденциальность информации во время активных расследований.</li> 
+<li>Известие всех расследований во внутренней базе данных для обеспечения прозрачности.</li> 
+</ul> 
+<hr> 
+
+<h3>ПРАВИЛА</h3> 
+<ol> 
+<li>Сотрудники ССС обязаны соблюдать все правила сервера.</li> 
+<li>Запрещено превышение должностных полномочий, самовольные действия или применение наказаний без согласования.</li> 
+<li>Запрещено вмешательство в действия других служб без предварительного согласования с МВД или администрацией.</li> 
+<li>Все действия ССС должны иметь RP-обоснование и быть документированы.</li> 
+<li>Запрещено использование служебного положения в личных целях или для давления на других игроков.</li> 
+<li>Нарушения норм и злоупотребления должностью со стороны ССС наказываются в соответствии с дисциплинарным уставом сервера.</li> 
+<li>ССС не имеет права выполнять боевые операции, кроме случаев, предусмотренных администрацией.</li> 
+</ol> 
+
+</p> 
+
+</div> 
+<div class="org-tab-content mvs">
+          <h3>МВС</h3>
+          <p><h3>ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+            <p>
+              Министерство внутренних дел (МВД) является главным органом управления, осуществляющим координацию, реформы и контроль за другими государственными службами, в частности полицией, ДБР, ССС и другими ведомствами. 
+МВД обеспечивает национальную безопасность, правопорядок и эффективное выполнение законодательных норм через надлежащий надзор и управленческие решения. 
+</p> 
+<hr> 
+<h3>ПОЛНОМОЧИЯ</h3> 
+<ul> 
+<li>Содействие в назначении руководства полиции, ДБР, ССС и других подразделений.</li> 
+<li>Разработка RP-нормативных документов, инструкций и стратегий реформ.</li> 
+<li>Проведение служебных проверок и аудитов.</li> 
+<li>Издание приказов, распоряжений и координирование совместных операций между структурами.</li> 
+<li>Отчетность перед Судом в критических ситуациях, требующих немедленного реагирования.</li> 
+</ul> 
+<hr> 
+<h3>ОБЯЗАННОСТИ</h3> 
+<ul> 
+<li>Контроль за эффективной, скоординированной и RP-ориентированной деятельностью всех служб.</li> 
+<li>Рассмотрение отчетов, жалоб граждан и служащих на нарушение или ненадлежащее поведение.</li> 
+<li>Принятие оперативных решений в случае внутренних конфликтов или кризисных ситуаций.</li> 
+<li>Обеспечение открытой и эффективной коммуникации между структурами и службами.</li> 
+</ul> 
+<hr> 
+<h3>ПРАВИЛА</h3> 
+<ol> 
+<li>Запрещено покрывать нарушителей среди собственных служб. Все преступления должны быть рассмотрены и привлечены к ответственности.</li> 
+<li>Решения МВД должны базироваться на четких RP-доказательствах, логике и анализе ситуации.</li> 
+<li>Нарушение служебной этики или служебных норм влечет RP-разбирательство и возможное наказание через Суд.</li> 
+<li>Постоянное совершенствование и реформирование существующих служебных процедур в соответствии с новыми RP-задачами и вызовами.</li> 
+<li>Работники МВД должны действовать в пределах своих полномочий и в контексте общих RP-процедур, обеспечивая стабильность и безопасность.</li> 
+</ol> 
+
+</p> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+
+<div class="org-section">
+    <h2>КОНСТИТУЦИЯ СЕРВЕРА</h2> 
+
+<div class="org-tabs"> 
+
+
+<input type="radio" name="org-tab" id="sec1"> 
+<input type="radio" name="org-tab" id="sec2"> 
+<input type="radio" name="org-tab" id="sec3"> 
+<input type="radio" name="org-tab" id="sec4"> 
+<input type="radio" name="org-tab" id="sec5"> 
+<input type="radio" name="org-tab" id="sec6"> 
+<input type="radio" name="org-tab" id="sec7"> 
+
+<div class="org-buttons"> 
+<label for="sec1" class="org-btn sec1">ОСНОВНЫЕ ПОЛОЖЕНИЯ</label> 
+<label for="sec2" class="org-btn sec2">СОБСТВЕННИК СЕРВЕРА</label> 
+<label for="sec3" class="org-btn sec3">ОРГАНЫ ЗАКОННОЙ ВЛАСТИ</label> 
+<label for="sec4" class="org-btn sec4">СУД</label> 
+<label for="sec5" class="org-btn sec5">ПРАВА И ОБЯЗАННОСТИ</label> 
+<label for="sec6" class="org-btn sec6">ИЗМЕНЕНИЯ И РЕДАКТИРОВАНИЕ</label> 
+<label for="sec7" class="org-btn sec7">ПРЕДПРИНИМАТЕЛЬСТВО И ТРУД</label>
+      </div>
+  
+
+      <div class="org-content">
+        <div class="org-tab-content sec1">
+          <h3>ОСНОВНЫЕ ПОЛОЖЕНИЯ</h3>
+          <h2>1. Основные положения</h2> <p>1.1. Основным языком сервера является русский. <br>1.2. Все игроки свободны и равны в своем достоинстве и правах. Права и свободы человека неотчуждаемы и незыблемы <br>1.3. Игроки имеют равные конституционные права и свободы и равны перед законом. <br>1.4. Каждый имеет право на свободу мировоззрения, вероисповедания и сексуальной ориентации. Это право включает свободу исповедовать любую религию, не исповедовать никакую религию или свободно выбирать свою сексуальную ориентацию без дискриминации. <br>1.5. Игроки имеют право собираться мирно, без оружия и проводить собрания, митинги, походы и демонстрации. <br>1.6. Каждый имеет право владеть, пользоваться и распоряжаться своей собственностью, результатами своей интеллектуальной, творческой деятельности. 1.7. Игроки могут работать на всех работах, включая государственные (администрация, ДБР, ССС, суд и т.д.), только по достижении 14 лет. Исключение составляет игровые работы, встроенные в игру, на которые это ограничение не распространяется.</p>
+        </div>
+        <div class="org-tab-content sec2">
+          <h3>ВЛАСНИК СЕРВЕРА</h3>
+          <h2>2. Власник Сервера</h2><p>2.1. Власник сервера є верховним джерелом влади. <br>2.2. Власник є незмінним та недоторканим. <br>2.3. Власник має право вільно назначати та звільняти посади виконавчої та урядової влади. <br>2.4. Тільки він може вносити зміни в правила сервера. <br>2.5. Тільки він може передати права власника іншій особі.</p>
+        </div>
+        <div class="org-tab-content sec3">
+          <h3>ОРГАНЫ ЗАКОННОЙ ВЛАСТИ</h3>
+          <h2>3. Органы законной власти</h2><p>3.1. Администрация сервера является законным органом исполнительной власти. <br>3.2. Только собственник вправе назначать органы исполнительной власти. <br>3.3. Администрация сервера обязана соблюдать правила и конституционные уставы или нести за это наказание. <br>3.4. Мэр сервера является уполномоченным администратором, который может оказывать непосредственное влияние на жизнь сервера и его правила. <br>3.5. Мэр сервера может быть выбран только путем голосования. <br>3.6. Главный судья - уполномоченный администратор, который имеет право назначать судей и обязан следить за деятельностью Органа Суда. <br>3.7. Лидеры фракций являются частью администрации с ограниченными правами. Они обязаны следить за действиями своей фракции. <br>3.8. Администратор с ограниченными полномочиями является частью администрации, который должен соблюдать все правила и конституционные уставы. <br>3.9. Главный администратор является уполномоченным лицом, имеющим право увольнять или назначать администраторов (с согласия владельца), проводить инвенты, следить за работой администрации и влиять на изменения на сервере. ДСТУ 3.10. Органы государственной власти, в частности ДБР, ССС и Суд, действуют в соответствии с Конституцией Сервера и установленными правилами, выполняя свои функции в рамках подчинения Министерству внутренних дел (МВД). Их деятельность координируется и контролируется МВД в соответствии с внутренними регламентами и положениями.  </p>
+        </div>
+        <div class="org-tab-content sec4">
+          <h3>СУД</h3>
+          <h2>4. Суд</h2><p>4.1. Права и свободы человека и гражданина защищаются судом. <br>4.2. Законы и другие нормативно правовые акты не имеют обратного действия во времени, кроме случаев, когда они смягчают или отменяют ответственность лица. <br>4.3. Никто не может быть дважды привлечен к юридической ответственности одного вида за одно и то же правонарушение. <br>4.4. Лицо считается невиновным в совершении преступления и не может быть подвергнуто уголовному наказанию, пока его вина не будет доказана в законном порядке и установлена ​​обвинительным приговором суда. <br>4.5. Судья является должностным лицом, которое обязано быть беспристрастным при рассмотрении дела. <br>4.6. Судья обязан соблюдать все конституционные свободы игроков. <br>4.7. Судья обязан досконально знать все законы, распоряжения и конституционные уставы. <br>4.8. Адвокат является юридическим лицом, целью которого является обеспечение правосудия и справедливости. <br>4.9. Адвокат обязан досконально знать все законы, распоряжения и конституционные уставы.</p> 
+</div> 
+<div class="org-tab-content sec5"> 
+<h3>ПРАВА И ОБЯЗАННОСТИ</h3> 
+<h2>5. Права и обязанности</h2><p>5.1. Каждый игрок имеет право на свободную игру, неприкосновенность имущества, получение медицинской помощи и правовой помощи. <br>5.2. Каждый обязан неукоснительно соблюдать РП правил, Конституции Сервера и законы (правила) Сервера, не посягать на права и свободы, честь и достоинство других людей. <br>5.3. Каждый имеет право на труд, включающий возможность зарабатывать себе на жизнь трудом, который он свободно выбирает или на который свободно соглашается. <br>5.4. Каждый должен платить налоги и сборы в порядке и размерах, установленных законом. <br>5.5. Никто не обязан выполнять явно преступные предписания или приказы. <br>5.6. Каждому гарантируется право знать свои права и обязанности.</p>
+        </div>
+        <div class="org-tab-content sec6">
+          <h3>ИЗМЕНЕНИЯ И РЕДАКТИРОВАНИЕ</h3>
+          <h2>6. Изменения и редактирование</h2><p>6.1. Изменение и редактирование Конституции можно проводить только по предварительному решению игроков на референдуме. Но на референдуме должно проголосовать не менее 50 процентов активных игроков. ДСТУ 6.2. Изменение и изменение может осуществляться только владельцем сервера или уполномоченным лицом. ДСТУ 6.3. Каждое изменение должно быть четко описано и обосновано.</p> 
+</div> 
+<div class="org-tab-content sec7"> 
+<h3>ПРЕДПРИНИМАТЕЛЬСТВО И ТРУД </h3> 
+<h2>7. Предпринимательство и труд</h2> 
+<p>7.1. Каждый имеет право на предпринимательскую деятельность. ДСТУ 7.2. Работодатель обязан предоставить достойные условия труда и заработной платы. ДСТУ 7.3. Предприниматель имеет право на защиту своего имущества и прав. ДСТУ 7.4. Никто не может вмешиваться в ход работы предприятия, кроме случаев, указанных законом. <br>7.5. Работодатель обязан соблюдать трудовой кодекс.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br>
+
+    <div class="footer">&copy; <b>Разработано и создано TUDOR. 2025 TUDOR UKRAINE RP. Все права защищены.</b> <br><small>Все материалы, представленные на этом сайте, являются объектами авторского права и охраняются в соответствии с законодательством. <br>Копирование, распределение или использование материалов сайта в любой форме без предварительного письменного согласия владельца авторских прав запрещено.</small></br></div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sideMenu").classList.toggle("open");
+        }
+
+        function openModal(rule, penalty, links = []) {
+            document.getElementById('ruleText').innerHTML = rule;  
+            document.getElementById('penaltyText').innerHTML = penalty || '';
+            
+            let linksContainer = document.getElementById('modalLinks');
+            linksContainer.innerHTML = '';
+            links.forEach(link => {
+                let a = document.createElement('a');
+                a.href = link.url;
+                a.target = '_blank';
+                a.textContent = link.text;
+                linksContainer.appendChild(a);
+            });
+            
+            document.getElementById('ruleModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('ruleModal').style.display = 'none';
+        }
+
+
+    window.addEventListener('scroll', function () {
+        const topBar = document.querySelector('.top-bar');
+        const header = document.querySelector('.header');
+        if (window.scrollY > 0) {
+            topBar.classList.add('scrolled');
+            header.classList.add('scrolled');
+        } else {
+            topBar.classList.remove('scrolled');
+            header.classList.remove('scrolled');
+        }
+    });
+
+window.addEventListener('scroll', function() {
+    let menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        if (isElementInView(item)) {
+            item.classList.add('visible');
+        }
+    });
+});
+
+function isElementInView(el) {
+    let rect = el.getBoundingClientRect();
+    return rect.top >= 0 && rect.top <= window.innerHeight;
+}
+window.addEventListener('load', function() {
+    let menuItems = document.querySelectorAll('.menu-item');
+    
+    
+    menuItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('visible');
+        }, index * 300);  
+    });
+});
+
+window.addEventListener('scroll', function() {
+    let menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        if (isElementInView(item)) {
+            item.classList.add('visible');
+        }
+    });
+});
+
+
+function isElementInView(el) {
+    let rect = el.getBoundingClientRect();
+    return rect.top >= 0 && rect.top <= window.innerHeight;
+}
+
+    </script>
+
+<div id="ruleModal" style="display: none;">
+    <div>
+        <h2>Rule</h2>
+        <div id="ruleText"></div>
+        <h3>Penalty</h3>
+        <div id="penaltyText"></div>
+        <div id="modalImage"></div> 
+        <div id="modalLinks"></div> 
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+    <script>
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+    });
+</script>
+    
+<div id="fixed-update-label">Оновлено 07.05.2025 о 03:30</div>
+
+</body>
+</html>
